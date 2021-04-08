@@ -1,7 +1,7 @@
 <?php
 /**
  * Displays the content on the plugin settings page
- * @package BestWebSoft
+ * @package ballerburg9005
  * @since 1.9.8
  */
 
@@ -75,7 +75,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 				'licenses'			 => array()
 			) );
 
-			$args['plugins_info']['Name'] = str_replace( ' by BestWebSoft', '', $args['plugins_info']['Name'] );
+			$args['plugins_info']['Name'] = str_replace( ' by ballerburg9005', '', $args['plugins_info']['Name'] );
 
 			$this->plugin_basename		= $args['plugin_basename'];
 			$this->prefix				= $args['prefix'];
@@ -164,7 +164,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                             <div id="postbox-container-1" class="postbox-container">
                                 <div class="meta-box-sortables ui-sortable">
                                     <div id="submitdiv" class="postbox">
-                                        <h3 class="hndle"><?php _e( 'Information', 'bestwebsoft' ); ?></h3>
+                                        <h3 class="hndle"><?php _e( 'Information', 'ballerburg9005' ); ?></h3>
                                         <div class="inside">
                                             <div class="submitbox" id="submitpost">
                                                 <div id="minor-publishing">
@@ -176,7 +176,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 														<?php if ( $this->is_pro ) {
 															if ( isset( $bstwbsftwppdtplgns_options['wrong_license_key'][ $this->plugin_basename ] ) || empty( $bstwbsftwppdtplgns_options['time_out'] ) || ! array_key_exists( $this->plugin_basename, $bstwbsftwppdtplgns_options['time_out'] ) ) {
 																$license_type = 'Pro';
-																$license_status = __( 'Inactive', 'bestwebsoft' ) . ' <a href="#' . $this->prefix . '_license_tab" class="bws_trigger_tab_click">' . __( 'Learn More', 'bestwebsoft' ) . '</a>';
+																$license_status = __( 'Inactive', 'ballerburg9005' ) . ' <a href="#' . $this->prefix . '_license_tab" class="bws_trigger_tab_click">' . __( 'Learn More', 'ballerburg9005' ) . '</a>';
 															} else {
 																$finish = strtotime( $bstwbsftwppdtplgns_options['time_out'][ $this->plugin_basename ] );
 																$today = strtotime( date( "m/d/Y" ) );
@@ -184,30 +184,30 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 																	$license_type = 'Trial Pro';
 
 																	if ( $finish < $today ) {
-																		$license_status = __( 'Expired', 'bestwebsoft' );
+																		$license_status = __( 'Expired', 'ballerburg9005' );
 																	} else {
 																		$daysleft = floor( ( $finish - $today ) / ( 60*60*24 ) );
-																		$license_status = sprintf( __( '%s day(-s) left', 'bestwebsoft' ), $daysleft );
+																		$license_status = sprintf( __( '%s day(-s) left', 'ballerburg9005' ), $daysleft );
 																	}
-																	$license_status .= '. <a target="_blank" href="' . esc_url( $this->plugins_info['PluginURI'] ) . '">' . __( 'Upgrade to Pro', 'bestwebsoft' ) . '</a>';
+																	$license_status .= '. <a target="_blank" href="' . esc_url( $this->plugins_info['PluginURI'] ) . '">' . __( 'Upgrade to Pro', 'ballerburg9005' ) . '</a>';
 																} else {
 																	$license_type = isset( $bstwbsftwppdtplgns_options['nonprofit'][ $this->plugin_basename ] ) ? 'Nonprofit Pro' : 'Pro';
 																	if ( ! empty( $bstwbsftwppdtplgns_options['time_out'][ $this->plugin_basename ] ) && $finish < $today ) {
-																		$license_status = sprintf( __( 'Expired on %s', 'bestwebsoft' ), $bstwbsftwppdtplgns_options['time_out'][ $this->plugin_basename ] ) . '. <a target="_blank" href="https://support.bestwebsoft.com/entries/53487136">' . __( 'Renew Now', 'bestwebsoft' ) . '</a>';
+																		$license_status = sprintf( __( 'Expired on %s', 'ballerburg9005' ), $bstwbsftwppdtplgns_options['time_out'][ $this->plugin_basename ] ) . '. <a target="_blank" href="https://support.ballerburg9005.com/entries/53487136">' . __( 'Renew Now', 'ballerburg9005' ) . '</a>';
 																	} else {
-																		$license_status = __( 'Active', 'bestwebsoft' );
+																		$license_status = __( 'Active', 'ballerburg9005' );
 																	}
 																}
 															} ?>
                                                             <div class="misc-pub-section">
-                                                                <strong><?php _e( 'License', 'bestwebsoft' ); ?>:</strong> <?php echo $license_type; ?>
+                                                                <strong><?php _e( 'License', 'ballerburg9005' ); ?>:</strong> <?php echo $license_type; ?>
                                                             </div>
                                                             <div class="misc-pub-section">
-                                                                <strong><?php _e( 'Status', 'bestwebsoft' ); ?>:</strong> <?php echo $license_status; ?>
+                                                                <strong><?php _e( 'Status', 'ballerburg9005' ); ?>:</strong> <?php echo $license_status; ?>
                                                             </div><!-- .misc-pub-section -->
 														<?php } ?>
                                                         <div class="misc-pub-section">
-                                                            <strong><?php _e( 'Version', 'bestwebsoft' ); ?>:</strong> <?php echo $this->plugins_info['Version']; ?>
+                                                            <strong><?php _e( 'Version', 'ballerburg9005' ); ?>:</strong> <?php echo $this->plugins_info['Version']; ?>
                                                         </div><!-- .misc-pub-section -->
                                                         <?php /**
                                                          * action - Display additional content for #misc-publishing-actions
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                                                 <div id="major-publishing-actions">
                                                     <div id="publishing-action">
                                                         <input type="hidden" name="<?php echo $this->prefix; ?>_form_submit" value="submit" />
-                                                        <input id="bws-submit-button" type="submit" class="button button-primary button-large" value="<?php _e( 'Save Changes', 'bestwebsoft' ); ?>" />
+                                                        <input id="bws-submit-button" type="submit" class="button button-primary button-large" value="<?php _e( 'Save Changes', 'ballerburg9005' ); ?>" />
 														<?php wp_nonce_field( $this->plugin_basename, 'bws_nonce_name' ); ?>
                                                     </div>
                                                     <div class="clear"></div>
@@ -239,7 +239,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 								 */
 								do_action( __CLASS__ . '_display_second_postbox' ); ?>
                                 <div class="submit">
-                                    <input type="submit" class="button button-primary button-large" value="<?php _e( 'Save Changes', 'bestwebsoft' ); ?>" />
+                                    <input type="submit" class="button button-primary button-large" value="<?php _e( 'Save Changes', 'ballerburg9005' ); ?>" />
                                 </div>
 								<?php if ( ! empty( $this->wp_slug ) )
 									bws_plugin_reviews_block( $this->plugins_info['Name'], $this->wp_slug ); ?>
@@ -320,7 +320,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			/* Restore default settings */
 			if ( isset( $_POST['bws_restore_confirm'] ) && check_admin_referer( $this->plugin_basename, 'bws_settings_nonce_name' ) ) {
 				$this->restore_options();
-				$message = __( 'All plugin settings were restored.', 'bestwebsoft' );
+				$message = __( 'All plugin settings were restored.', 'ballerburg9005' );
 				/* Go Pro - check license key */
 			} elseif ( isset( $_POST['bws_license_submit'] ) && check_admin_referer( $this->plugin_basename, 'bws_nonce_name' ) ) {
 				$result = $this->save_options_license_key();
@@ -460,22 +460,22 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 * @access private
 		 */
 		private function tab_custom_code() { ?>
-            <h3 class="bws_tab_label"><?php _e( 'Custom Code', 'bestwebsoft' ); ?></h3>
+            <h3 class="bws_tab_label"><?php _e( 'Custom Code', 'ballerburg9005' ); ?></h3>
 			<?php $this->help_phrase(); ?>
             <hr>
 			<?php if ( ! current_user_can( 'edit_plugins' ) ) {
-				echo '<p>' . __( 'You do not have sufficient permissions to edit plugins for this site.', 'bestwebsoft' ) . '</p>';
+				echo '<p>' . __( 'You do not have sufficient permissions to edit plugins for this site.', 'ballerburg9005' ) . '</p>';
 				return;
 			}
 
 			$list = array(
-				'css' => array( 'description' 	=> __( 'These styles will be added to the header on all pages of your site.', 'bestwebsoft' ),
+				'css' => array( 'description' 	=> __( 'These styles will be added to the header on all pages of your site.', 'ballerburg9005' ),
 				                'learn_more_link'	=> 'https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started'
 				),
-				'php' => array( 'description' 	=> sprintf( __( 'This PHP code will be hooked to the %s action and will be printed on front end only.', 'bestwebsoft' ), '<a href="https://codex.wordpress.org/Plugin_API/Action_Reference/init" target="_blank"><code>init</code></a>' ),
+				'php' => array( 'description' 	=> sprintf( __( 'This PHP code will be hooked to the %s action and will be printed on front end only.', 'ballerburg9005' ), '<a href="https://codex.wordpress.org/Plugin_API/Action_Reference/init" target="_blank"><code>init</code></a>' ),
 				                'learn_more_link'	=> 'https://php.net/'
 				),
-				'js' => array( 'description' 	=> __( 'These code will be added to the header on all pages of your site.', 'bestwebsoft' ),
+				'js' => array( 'description' 	=> __( 'These code will be added to the header on all pages of your site.', 'ballerburg9005' ),
 				               'learn_more_link'	=> 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
 				),
 			);
@@ -483,7 +483,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			if ( ! $this->custom_code_args['css_writeable'] ||
 			     ! $this->custom_code_args['php_writeable'] ||
 			     ! $this->custom_code_args['js_writeable'] ) { ?>
-                <p><em><?php printf( __( 'You need to make this files writable before you can save your changes. See %s the Codex %s for more information.', 'bestwebsoft' ),
+                <p><em><?php printf( __( 'You need to make this files writable before you can save your changes. See %s the Codex %s for more information.', 'ballerburg9005' ),
 							'<a href="https://codex.wordpress.org/Changing_File_Permissions" target="_blank">',
 							'</a>' ); ?></em></p>
 			<?php }
@@ -493,12 +493,12 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                 <p><big>
                         <strong><?php echo $name; ?></strong>
 						<?php if ( ! $this->custom_code_args["{$extension}_writeable"] )
-							echo '(' . __( 'Browsing', 'bestwebsoft' ) . ')'; ?>
+							echo '(' . __( 'Browsing', 'ballerburg9005' ) . ')'; ?>
                     </big></p>
                 <p class="bws_info">
                     <label>
                         <input type="checkbox" name="bws_custom_<?php echo $extension; ?>_active" value="1" <?php if ( $this->custom_code_args["is_{$extension}_active"] ) echo "checked"; ?> />
-						<?php printf( __( 'Activate custom %s code.', 'bestwebsoft' ), $name ); ?>
+						<?php printf( __( 'Activate custom %s code.', 'ballerburg9005' ), $name ); ?>
                     </label>
                 </p>
                 <textarea cols="70" rows="25" name="bws_newcontent_<?php echo $extension; ?>" id="bws_newcontent_<?php echo $extension; ?>"><?php if ( isset( $this->custom_code_args["content_{$extension}"] ) ) echo esc_textarea( $this->custom_code_args["content_{$extension}"] ); ?></textarea>
@@ -506,7 +506,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 					<?php echo $extension_data['description']; ?>
                     <br>
                     <a href="<?php echo esc_url( $extension_data['learn_more_link'] ); ?>" target="_blank">
-						<?php printf( __( 'Learn more about %s', 'bestwebsoft' ), $name ); ?>
+						<?php printf( __( 'Learn more about %s', 'ballerburg9005' ), $name ); ?>
                     </a>
                 </p>
 			<?php }
@@ -568,7 +568,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 */
 		private function tab_misc() {
 			global $bstwbsftwppdtplgns_options; ?>
-            <h3 class="bws_tab_label"><?php _e( 'Miscellaneous Settings', 'bestwebsoft' ); ?></h3>
+            <h3 class="bws_tab_label"><?php _e( 'Miscellaneous Settings', 'ballerburg9005' ); ?></h3>
 			<?php $this->help_phrase(); ?>
             <hr>
 			<?php /**
@@ -577,10 +577,10 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			do_action( __CLASS__ . '_additional_misc_options' );
 
 			if ( ! $this->forbid_view && ! empty( $this->change_permission_attr ) ) { ?>
-                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'bestwebsoft' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to change %s settings on this site in the %s network settings.", 'bestwebsoft' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
+                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'ballerburg9005' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to change %s settings on this site in the %s network settings.", 'ballerburg9005' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
 			<?php }
 			if ( $this->forbid_view ) { ?>
-                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'bestwebsoft' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to view %s settings on this site in the %s network settings.", 'bestwebsoft' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
+                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'ballerburg9005' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to view %s settings on this site in the %s network settings.", 'ballerburg9005' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
 			<?php } else { ?>
                 <table class="form-table">
 					<?php /**
@@ -589,29 +589,29 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 					do_action( __CLASS__ . '_additional_misc_options_affected' );
 					if ( ! empty( $this->pro_page ) && $this->bws_hide_pro_option_exist ) { ?>
                         <tr>
-                            <th scope="row"><?php _e( 'Pro Options', 'bestwebsoft' ); ?></th>
+                            <th scope="row"><?php _e( 'Pro Options', 'ballerburg9005' ); ?></th>
                             <td>
                                 <label>
                                     <input <?php echo $this->change_permission_attr; ?> name="bws_hide_premium_options_submit" type="checkbox" value="1" <?php if ( ! $this->hide_pro_tabs ) echo 'checked="checked "'; ?> />
-                                    <span class="bws_info"><?php _e( 'Enable to display plugin Pro options.', 'bestwebsoft' ); ?></span>
+                                    <span class="bws_info"><?php _e( 'Enable to display plugin Pro options.', 'ballerburg9005' ); ?></span>
                                 </label>
                             </td>
                         </tr>
 					<?php } ?>
                     <tr>
-                        <th scope="row"><?php _e( 'Track Usage', 'bestwebsoft' ); ?></th>
+                        <th scope="row"><?php _e( 'Track Usage', 'ballerburg9005' ); ?></th>
                         <td>
                             <label>
                                 <input <?php echo $this->change_permission_attr; ?> name="bws_track_usage" type="checkbox" value="1" <?php if ( ! empty( $bstwbsftwppdtplgns_options['track_usage']['products'][ $this->plugin_basename ] ) ) echo 'checked="checked "'; ?>/>
-                                <span class="bws_info"><?php _e( 'Enable to allow tracking plugin usage anonymously in order to make it better.', 'bestwebsoft' ); ?></span>
+                                <span class="bws_info"><?php _e( 'Enable to allow tracking plugin usage anonymously in order to make it better.', 'ballerburg9005' ); ?></span>
                             </label>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php _e( 'Default Settings', 'bestwebsoft' ); ?></th>
+                        <th scope="row"><?php _e( 'Default Settings', 'ballerburg9005' ); ?></th>
                         <td>
-                            <input<?php echo $this->change_permission_attr; ?> name="bws_restore_default" type="submit" class="button" value="<?php _e( 'Restore Settings', 'bestwebsoft' ); ?>" />
-                            <div class="bws_info"><?php _e( 'This will restore plugin settings to defaults.', 'bestwebsoft' ); ?></div>
+                            <input<?php echo $this->change_permission_attr; ?> name="bws_restore_default" type="submit" class="button" value="<?php _e( 'Restore Settings', 'ballerburg9005' ); ?>" />
+                            <div class="bws_info"><?php _e( 'This will restore plugin settings to defaults.', 'ballerburg9005' ); ?></div>
                         </td>
                     </tr>
                 </table>
@@ -623,7 +623,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 * @access private
 		 */
 		public function tab_import_export() { ?>
-            <h3 class="bws_tab_label"><?php _e( 'Import / Export', 'bestwebsoft' ); ?></h3>
+            <h3 class="bws_tab_label"><?php _e( 'Import / Export', 'ballerburg9005' ); ?></h3>
 			<?php $this->help_phrase(); ?>
             <hr>
 			<?php /**
@@ -632,10 +632,10 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			do_action( __CLASS__ . '_additional_import_export_options' );
 
 			if ( ! $this->forbid_view && ! empty( $this->change_permission_attr ) ) { ?>
-                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'bestwebsoft' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to change %s settings on this site in the %s network settings.", 'bestwebsoft' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
+                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'ballerburg9005' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to change %s settings on this site in the %s network settings.", 'ballerburg9005' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
 			<?php }
 			if ( $this->forbid_view ) { ?>
-                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'bestwebsoft' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to view %s settings on this site in the %s network settings.", 'bestwebsoft' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
+                <div class="error inline bws_visible"><p><strong><?php _e( "Notice", 'ballerburg9005' ); ?>:</strong> <strong><?php printf( __( "It is prohibited to view %s settings on this site in the %s network settings.", 'ballerburg9005' ), $this->plugins_info["Name"], $this->plugins_info["Name"] ); ?></strong></p></div>
 			<?php } else { ?>
                 <table class="form-table">
 					<?php /**
@@ -715,7 +715,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 					),
 					'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 				);
-				$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/products-statistics/track-usage/', $options );
+				$raw_response = wp_remote_post( 'https://ballerburg9005.com/wp-content/plugins/products-statistics/track-usage/', $options );
 
 				if ( ! is_wp_error( $raw_response ) && 200 == wp_remote_retrieve_response_code( $raw_response ) ) {
 					$response = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
@@ -741,7 +741,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 */
 		public function tab_license() {
 			global $wp_version, $bstwbsftwppdtplgns_options; ?>
-            <h3 class="bws_tab_label"><?php _e( 'License Key', 'bestwebsoft' ); ?></h3>
+            <h3 class="bws_tab_label"><?php _e( 'License Key', 'ballerburg9005' ); ?></h3>
 			<?php $this->help_phrase(); ?>
             <hr>
 			<?php
@@ -750,34 +750,34 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 				if ( ! empty( $this->pro_page ) || ! empty( $single_license['pro_basename'] )  ) {
 
 					if ( $this->pro_plugin_is_activated && ( empty( $single_license['pro_basename'] ) || isset( $this->bws_license_plugin ) ) ) {
-						$url = 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/downloads/?bws_first_download=' . $this->bws_license_plugin . '&bws_license_key=' . $bstwbsftwppdtplgns_options[ $this->bws_license_plugin ] . '&download_from=5'; ?>
+						$url = 'https://ballerburg9005.com/wp-content/plugins/paid-products/plugins/downloads/?bws_first_download=' . $this->bws_license_plugin . '&bws_license_key=' . $bstwbsftwppdtplgns_options[ $this->bws_license_plugin ] . '&download_from=5'; ?>
 						<table class="form-table">
                             <tr>
                                 <th scope="row"><?php echo $pro_plugin_name . ' License'; ?></th>
                                 <td>
                                     <p>
-										<strong><?php _e( 'Your Pro plugin is ready', 'bestwebsoft' ); ?></strong>
+										<strong><?php _e( 'Your Pro plugin is ready', 'ballerburg9005' ); ?></strong>
 										<br>
-										<?php _e( 'Your plugin has been zipped, and now is ready to download.', 'bestwebsoft' ); ?>
+										<?php _e( 'Your plugin has been zipped, and now is ready to download.', 'ballerburg9005' ); ?>
 									</p>
 									<p>
-										<a class="button button-secondary" target="_parent" href="<?php echo esc_url( $url ); ?>"><?php _e( 'Download Now', 'bestwebsoft' ); ?></a>
+										<a class="button button-secondary" target="_parent" href="<?php echo esc_url( $url ); ?>"><?php _e( 'Download Now', 'ballerburg9005' ); ?></a>
 									</p>
 									<br>
 									<p>
-										<strong><?php _e( 'Need help installing the plugin?', 'bestwebsoft' ); ?></strong>
+										<strong><?php _e( 'Need help installing the plugin?', 'ballerburg9005' ); ?></strong>
 										<br>
-										<a target="_blank" href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/"><?php _e( 'How to install WordPress plugin from your admin Dashboard (ZIP archive)', 'bestwebsoft' ); ?></a>
+										<a target="_blank" href="https://docs.google.com/document/d/1-hvn6WRvWnOqj5v5pLUk7Awyu87lq5B_dO-Tv-MC9JQ/"><?php _e( 'How to install WordPress plugin from your admin Dashboard (ZIP archive)', 'ballerburg9005' ); ?></a>
 									</p>
 									<br>					
 									<p>
-										<strong><?php _e( 'Get Started', 'bestwebsoft' ); ?></strong>
+										<strong><?php _e( 'Get Started', 'ballerburg9005' ); ?></strong>
 										<br>
-										<a target="_blank" href="https://drive.google.com/drive/u/0/folders/0B5l8lO-CaKt9VGh0a09vUjNFNjA"><?php _e( 'Documentation', 'bestwebsoft' ); ?></a>
+										<a target="_blank" href="https://drive.google.com/drive/u/0/folders/0B5l8lO-CaKt9VGh0a09vUjNFNjA"><?php _e( 'Documentation', 'ballerburg9005' ); ?></a>
 										<br>
-										<a target="_blank" href="https://www.youtube.com/user/bestwebsoft"><?php _e( 'Video Instructions', 'bestwebsoft' ); ?></a>
+										<a target="_blank" href="https://www.youtube.com/user/ballerburg9005"><?php _e( 'Video Instructions', 'ballerburg9005' ); ?></a>
 										<br>
-										<a target="_blank" href="https://support.bestwebsoft.com"><?php _e( 'Knowledge Base', 'bestwebsoft' ); ?></a>
+										<a target="_blank" href="https://support.ballerburg9005.com"><?php _e( 'Knowledge Base', 'ballerburg9005' ); ?></a>
 									</p>
                                 </td>
                             </tr>
@@ -798,15 +798,15 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                                 <td>
                                     <input <?php echo $attr; ?> type="text" name="bws_license_key_<?php echo ( ! empty( $single_license['pro_slug'] ) ) ? $single_license['pro_slug'] : $single_license['slug']; ?>" value="<?php echo esc_attr( $license_key ); ?>" />
                                     <input <?php echo $attr; ?> type="hidden" name="bws_license_plugin_<?php echo ( ! empty( $single_license['pro_slug'] ) ) ? $single_license['pro_slug'] : $single_license['slug']; ?>" value="<?php echo esc_attr( ( ! empty( $single_license['pro_slug'] ) ) ? $single_license['pro_slug'] : $single_license['slug'] ); ?>" />
-                                    <input <?php echo $attr; ?> type="submit" class="button button-secondary" name="bws_license_submit" value="<?php _e( 'Activate', 'bestwebsoft' ); ?>" />
+                                    <input <?php echo $attr; ?> type="submit" class="button button-secondary" name="bws_license_submit" value="<?php _e( 'Activate', 'ballerburg9005' ); ?>" />
                                     <div class="bws_info">
-										<?php printf( __( 'Enter your license key to activate %s and get premium plugin features.', 'bestwebsoft' ), '<a href="' . $this->bws_plugin_link . '" target="_blank" title="' . $pro_plugin_name . '">' . $pro_plugin_name . '</a>' ); ?>
+										<?php printf( __( 'Enter your license key to activate %s and get premium plugin features.', 'ballerburg9005' ), '<a href="' . $this->bws_plugin_link . '" target="_blank" title="' . $pro_plugin_name . '">' . $pro_plugin_name . '</a>' ); ?>
                                     </div>
 									<?php if ( '' != $attr ) { ?>
-                                        <p><?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'bestwebsoft' ); ?></p>
+                                        <p><?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'ballerburg9005' ); ?></p>
 									<?php }
 									if ( $this->trial_days !== false )
-										echo '<p>' . __( 'or', 'bestwebsoft' ) . ' <a href="' . esc_url( $this->plugins_info['PluginURI'] . 'trial/?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) . '" target="_blank">' . sprintf( __( 'Start Your Free %s-Day Trial Now', 'bestwebsoft' ), $this->trial_days ) . '</a></p>'; ?>
+										echo '<p>' . __( 'or', 'ballerburg9005' ) . ' <a href="' . esc_url( $this->plugins_info['PluginURI'] . 'trial/?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) . '" target="_blank">' . sprintf( __( 'Start Your Free %s-Day Trial Now', 'ballerburg9005' ), $this->trial_days ) . '</a></p>'; ?>
                                 </td>
                             </tr>
                         </table>
@@ -819,9 +819,9 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
                             <th scope="row"><?php echo $pro_plugin_name . ' License'; ?></th>
                             <td>
                                 <input type="text" maxlength="100" name="bws_license_key_<?php echo $single_license['slug']; ?>" value="<?php echo esc_attr( $license_key ); ?>" />
-                                <input type="submit" class="button button-secondary" name="bws_license_submit" value="<?php _e( 'Check license key', 'bestwebsoft' ); ?>" />
+                                <input type="submit" class="button button-secondary" name="bws_license_submit" value="<?php _e( 'Check license key', 'ballerburg9005' ); ?>" />
                                 <div class="bws_info">
-									<?php _e( 'If necessary, you can check if the license key is correct or reenter it in the field below.', 'bestwebsoft' ); ?>
+									<?php _e( 'If necessary, you can check if the license key is correct or reenter it in the field below.', 'ballerburg9005' ); ?>
                                 </div>
                             </td>
                         </tr>
@@ -830,11 +830,11 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 			} ?>
             <table class="form-table">
                 <tr>
-                    <th scope="row"><?php _e( 'Manage License Settings', 'bestwebsoft' ); ?></th>
+                    <th scope="row"><?php _e( 'Manage License Settings', 'ballerburg9005' ); ?></th>
                     <td>
-                        <a class="button button-secondary" href="https://bestwebsoft.com/client-area" target="_blank"><?php _e( 'Login to Client Area', 'bestwebsoft' ); ?></a>
+                        <a class="button button-secondary" href="https://ballerburg9005.com/client-area" target="_blank"><?php _e( 'Login to Client Area', 'ballerburg9005' ); ?></a>
                         <div class="bws_info">
-							<?php _e( 'Manage active licenses, download BWS products, and view your payment history using BestWebSoft Client Area.', 'bestwebsoft' ); ?>
+							<?php _e( 'Manage active licenses, download BWS products, and view your payment history using ballerburg9005 Client Area.', 'ballerburg9005' ); ?>
                         </div>
                     </td>
                 </tr>
@@ -857,7 +857,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 				$bws_license_key = ( isset( $_POST[ ( ! empty( $single_license['pro_slug'] ) ) ? 'bws_license_key_' . $single_license['pro_slug'] : 'bws_license_key_' . $single_license['slug'] ] ) ) ? stripslashes( sanitize_text_field( $_POST[ ( ! empty( $single_license['pro_slug'] ) ) ? 'bws_license_key_' . $single_license['pro_slug'] : 'bws_license_key_' . $single_license['slug'] ] ) ) : '';
 				if ( '' != $bws_license_key ) {
 					if ( strlen( $bws_license_key ) != 18 ) {
-						$error = __( 'Wrong license key', 'bestwebsoft' );
+						$error = __( 'Wrong license key', 'ballerburg9005' );
 					} else {
 
 						/* CHECK license key */
@@ -881,42 +881,42 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 									'body'       => array( 'plugins' => serialize( $to_send ) ),
 									'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 								);
-								$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
+								$raw_response = wp_remote_post( 'https://ballerburg9005.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
 
 								if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ) {
-									$error = __( 'Something went wrong. Please try again later. If the error appears again, please contact us', 'bestwebsoft' ) . ': <a href=https://support.bestwebsoft.com>BestWebSoft</a>. ' . __( 'We are sorry for inconvenience.', 'bestwebsoft' );
+									$error = __( 'Something went wrong. Please try again later. If the error appears again, please contact us', 'ballerburg9005' ) . ': <a href=https://support.ballerburg9005.com>ballerburg9005</a>. ' . __( 'We are sorry for inconvenience.', 'ballerburg9005' );
 								} else {
 									$response = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
 									if ( is_array( $response ) && ! empty( $response ) ) {
 										foreach ( $response as $single_response ) {
 											if ( "wrong_license_key" == $single_response->package ) {
-												$error = __( 'Wrong license key.', 'bestwebsoft' );
+												$error = __( 'Wrong license key.', 'ballerburg9005' );
 											} else if ( "wrong_domain" == $single_response->package ) {
-												$error = __( 'This license key is bound to another site.', 'bestwebsoft' );
+												$error = __( 'This license key is bound to another site.', 'ballerburg9005' );
 											} else if ( "time_out" == $single_response->package ) {
-												$message = __( 'This license key is valid, but Your license has expired. If you want to update our plugin in future, you should extend the license.', 'bestwebsoft' );
+												$message = __( 'This license key is valid, but Your license has expired. If you want to update our plugin in future, you should extend the license.', 'ballerburg9005' );
 											} elseif ( "you_are_banned" == $single_response->package ) {
-												$error = __( "Unfortunately, you have exceeded the number of available tries.", 'bestwebsoft' );
+												$error = __( "Unfortunately, you have exceeded the number of available tries.", 'ballerburg9005' );
 											} elseif ( "duplicate_domen_for_trial" == $single_response->package ) {
-												$error = __( "Unfortunately, the Pro Trial licence was already installed to this domain. The Pro Trial license can be installed only once.", 'bestwebsoft' );
+												$error = __( "Unfortunately, the Pro Trial licence was already installed to this domain. The Pro Trial license can be installed only once.", 'ballerburg9005' );
 											}
 											if ( empty( $error ) ) {
 												if ( empty( $message ) ) {
 													if ( isset( $single_response->trial ) ) {
-														$message = __( 'The Pro Trial license key is valid.', 'bestwebsoft' );
+														$message = __( 'The Pro Trial license key is valid.', 'ballerburg9005' );
 													} else {
-														$message = __( 'The license key is valid.', 'bestwebsoft' );
+														$message = __( 'The license key is valid.', 'ballerburg9005' );
 													}
 
 													if ( ! empty( $single_response->time_out ) ) {
-														$message .= ' ' . __( 'Your license will expire on', 'bestwebsoft' ) . ' ' . $single_response->time_out . '.';
+														$message .= ' ' . __( 'Your license will expire on', 'ballerburg9005' ) . ' ' . $single_response->time_out . '.';
 													} else {
 														/* lifetime */
 														$single_response->time_out = NULL;
 													}
 
 													if ( isset( $single_response->trial ) && $this->is_trial ) {
-														$message .= ' ' . sprintf( __( 'In order to continue using the plugin it is necessary to buy a %s license.', 'bestwebsoft' ), '<a href="' . esc_url( $this->plugins_info['PluginURI'] . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) . '" target="_blank" title="' . $this->plugins_info["Name"] . '">Pro</a>' );
+														$message .= ' ' . sprintf( __( 'In order to continue using the plugin it is necessary to buy a %s license.', 'ballerburg9005' ), '<a href="' . esc_url( $this->plugins_info['PluginURI'] . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ) . '" target="_blank" title="' . $this->plugins_info["Name"] . '">Pro</a>' );
 													}
 												}
 
@@ -963,7 +963,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 											}
 										}
 									} else {
-										$error = __( 'Something went wrong. Please try again later. If the error appears again, please contact us', 'bestwebsoft' ) . ' <a href=https://support.bestwebsoft.com>BestWebSoft</a>. ' . __( 'We are sorry for inconvenience.', 'bestwebsoft' );
+										$error = __( 'Something went wrong. Please try again later. If the error appears again, please contact us', 'ballerburg9005' ) . ' <a href=https://support.ballerburg9005.com>ballerburg9005</a>. ' . __( 'We are sorry for inconvenience.', 'ballerburg9005' );
 									}
 								}
 							}
@@ -998,24 +998,24 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 										'body'       => array( 'plugins' => serialize( $to_send ) ),
 										'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 									);
-									$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
+									$raw_response = wp_remote_post( 'https://ballerburg9005.com/wp-content/plugins/paid-products/plugins/pro-license-check/1.0/', $options );
 
 									if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ) {
-										$error = __( "Something went wrong. Please try again later. If the error appears again, please contact us", 'bestwebsoft' ) . ': <a href="https://support.bestwebsoft.com">BestWebSoft</a>. ' . __( "We are sorry for inconvenience.", 'bestwebsoft' );
+										$error = __( "Something went wrong. Please try again later. If the error appears again, please contact us", 'ballerburg9005' ) . ': <a href="https://support.ballerburg9005.com">ballerburg9005</a>. ' . __( "We are sorry for inconvenience.", 'ballerburg9005' );
 									} else {
 										$response = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
 										if ( is_array( $response ) && ! empty( $response ) ) {
 											foreach ( $response as $single_response ) {
 												if ( "wrong_license_key" == $single_response->package ) {
-													$error = __( "Wrong license key.", 'bestwebsoft' );
+													$error = __( "Wrong license key.", 'ballerburg9005' );
 												} elseif ( "wrong_domain" == $single_response->package ) {
-													$error = __( "This license key is bound to another site.", 'bestwebsoft' );
+													$error = __( "This license key is bound to another site.", 'ballerburg9005' );
 												} elseif ( "you_are_banned" == $single_response->package ) {
-													$error = __( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'bestwebsoft' );
+													$error = __( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'ballerburg9005' );
 												} elseif ( "time_out" == $single_response->package ) {
-													$error = sprintf( __( "Unfortunately, Your license has expired. To continue getting top-priority support and plugin updates, you should extend it in your %s.", 'bestwebsoft' ), ' <a href="https://bestwebsoft.com/client-area">Client Area</a>' );
+													$error = sprintf( __( "Unfortunately, Your license has expired. To continue getting top-priority support and plugin updates, you should extend it in your %s.", 'ballerburg9005' ), ' <a href="https://ballerburg9005.com/client-area">Client Area</a>' );
 												} elseif ( "duplicate_domen_for_trial" == $single_response->package ) {
-													$error = __( "Unfortunately, the Pro licence was already installed to this domain. The Pro Trial license can be installed only once.", 'bestwebsoft' );
+													$error = __( "Unfortunately, the Pro licence was already installed to this domain. The Pro Trial license can be installed only once.", 'ballerburg9005' );
 												}
 											}
 											if ( empty( $error ) ) {
@@ -1025,7 +1025,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 												$this->pro_plugin_is_activated = true;
 											}
 										} else {
-											$error = __( "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvenience.", 'bestwebsoft' );
+											$error = __( "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvenience.", 'ballerburg9005' );
 										}
 									}
 								}
@@ -1062,7 +1062,7 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 						}
 					}
 				} else {
-					$empty_field_error = __( "Please, enter Your license key", 'bestwebsoft' );
+					$empty_field_error = __( "Please, enter Your license key", 'ballerburg9005' );
 				}
 			}
 			return compact( 'error', 'message', 'empty_field_error' );
@@ -1075,24 +1075,24 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 		 * @return array    The action results
 		 */
 		public function help_phrase() {
-			echo '<div class="bws_tab_description">' . __( 'Need Help?', 'bestwebsoft' ) . ' ';
+			echo '<div class="bws_tab_description">' . __( 'Need Help?', 'ballerburg9005' ) . ' ';
 			if ( '' != $this->doc_link )
-				echo '<a href="' . esc_url( $this->doc_link ) . '" target="_blank">' . __( 'Read the Instruction', 'bestwebsoft' );
+				echo '<a href="' . esc_url( $this->doc_link ) . '" target="_blank">' . __( 'Read the Instruction', 'ballerburg9005' );
 			else
-				echo '<a href="https://support.bestwebsoft.com/hc/en-us/" target="_blank">' . __( 'Visit Help Center', 'bestwebsoft' );
+				echo '<a href="https://support.ballerburg9005.com/hc/en-us/" target="_blank">' . __( 'Visit Help Center', 'ballerburg9005' );
 			if ( '' != $this->doc_video_link )
-				echo '</a>' . ' ' . __( 'or', 'bestwebsoft' ) . ' ' . '<a href="' . esc_url( $this->doc_video_link ) . '" target="_blank">' . __( 'Watch the Video', 'bestwebsoft' );
+				echo '</a>' . ' ' . __( 'or', 'ballerburg9005' ) . ' ' . '<a href="' . esc_url( $this->doc_video_link ) . '" target="_blank">' . __( 'Watch the Video', 'ballerburg9005' );
 			echo '</a></div>';
 		}
 
 		public function bws_pro_block_links() {
 			global $wp_version; ?>
             <div class="bws_pro_version_tooltip">
-                <a class="bws_button" href="<?php echo esc_url( $this->plugins_info['PluginURI'] ); ?>?k=<?php echo $this->link_key; ?>&amp;pn=<?php echo $this->link_pn; ?>&amp;v=<?php echo $this->plugins_info["Version"]; ?>&amp;wp_v=<?php echo $wp_version; ?>" target="_blank" title="<?php echo $this->plugins_info["Name"]; ?>"><?php _e( 'Upgrade to Pro', 'bestwebsoft' ); ?></a>
+                <a class="bws_button" href="<?php echo esc_url( $this->plugins_info['PluginURI'] ); ?>?k=<?php echo $this->link_key; ?>&amp;pn=<?php echo $this->link_pn; ?>&amp;v=<?php echo $this->plugins_info["Version"]; ?>&amp;wp_v=<?php echo $wp_version; ?>" target="_blank" title="<?php echo $this->plugins_info["Name"]; ?>"><?php _e( 'Upgrade to Pro', 'ballerburg9005' ); ?></a>
 				<?php if ( $this->trial_days !== false ) { ?>
                     <span class="bws_trial_info">
-						<?php _e( 'or', 'bestwebsoft' ); ?>
-                        <a href="<?php echo esc_url( $this->plugins_info['PluginURI'] . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ); ?>" target="_blank" title="<?php echo $this->plugins_info["Name"]; ?>"><?php _e( 'Start Your Free Trial', 'bestwebsoft' ); ?></a>
+						<?php _e( 'or', 'ballerburg9005' ); ?>
+                        <a href="<?php echo esc_url( $this->plugins_info['PluginURI'] . '?k=' . $this->link_key . '&pn=' . $this->link_pn . '&v=' . $this->plugins_info["Version"] . '&wp_v=' . $wp_version ); ?>" target="_blank" title="<?php echo $this->plugins_info["Name"]; ?>"><?php _e( 'Start Your Free Trial', 'ballerburg9005' ); ?></a>
 					</span>
 				<?php } ?>
                 <div class="clear"></div>
@@ -1127,26 +1127,26 @@ if ( ! class_exists( 'Bws_Settings_Tabs' ) ) {
 
 		public function add_request_feature() { ?>
 			<div id="bws_request_feature" class="widget-access-link">
-				<button type="button" class="button" ><?php _e( 'Request a Feature', 'bestwebsoft' ); ?></button>
+				<button type="button" class="button" ><?php _e( 'Request a Feature', 'ballerburg9005' ); ?></button>
 			</div>
 			<?php $modal_html = '<div class="bws-modal bws-modal-deactivation-feedback bws-modal-request-feature">
 		    	<div class="bws-modal-dialog">
 		    		<div class="bws-modal-body">
-		    			<h2>' . sprintf( __( 'How can we improve %s?', 'bestwebsoft' ), $this->plugins_info['Name'] ) . '</h2>
+		    			<h2>' . sprintf( __( 'How can we improve %s?', 'ballerburg9005' ), $this->plugins_info['Name'] ) . '</h2>
 		    			<div class="bws-modal-panel active">
-		    				<p>' . __( 'We look forward to hear your ideas.', 'bestwebsoft' ) . '</p>
+		    				<p>' . __( 'We look forward to hear your ideas.', 'ballerburg9005' ) . '</p>
 		    				<p>
-		    					<textarea placeholder="' . __( 'Describe your idea', 'bestwebsoft' ) . '..."></textarea>
+		    					<textarea placeholder="' . __( 'Describe your idea', 'ballerburg9005' ) . '..."></textarea>
 		    				</p>
 		    				<label class="bws-modal-anonymous-label">
-			    				<input type="checkbox" /> ' . __( 'Send website data and allow to contact me back', 'bestwebsoft' ) . '
+			    				<input type="checkbox" /> ' . __( 'Send website data and allow to contact me back', 'ballerburg9005' ) . '
 							</label>
 						</div>
 					</div>
 					<div class="bws-modal-footer">
-						<a href="#" class="button disabled bws-modal-button button-primary">' . __( 'Submit', 'bestwebsoft' ) . '</a>
-						<span class="bws-modal-processing hidden">' . __( 'Processing', 'bestwebsoft' ) . '...</span>
-						<span class="bws-modal-thank-you hidden">' . __( 'Thank you!', 'bestwebsoft' ) . '</span>
+						<a href="#" class="button disabled bws-modal-button button-primary">' . __( 'Submit', 'ballerburg9005' ) . '</a>
+						<span class="bws-modal-processing hidden">' . __( 'Processing', 'ballerburg9005' ) . '...</span>
+						<span class="bws-modal-thank-you hidden">' . __( 'Thank you!', 'ballerburg9005' ) . '</span>
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -1295,7 +1295,7 @@ if ( ! function_exists( 'bws_submit_request_feature_action' ) ) {
 		}
 
 		/* send data */
-		$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/products-statistics/request-feature/', array(
+		$raw_response = wp_remote_post( 'https://ballerburg9005.com/wp-content/plugins/products-statistics/request-feature/', array(
 			'method'  => 'POST',
 			'body'    => $options,
 			'timeout' => 15,

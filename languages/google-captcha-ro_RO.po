@@ -4,8 +4,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-28 14:28+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
+"Last-Translator: ballerburg9005.com <plugin@ballerburg9005.com>\n"
+"Language-Team: the ballerburg9005 Team <plugin@ballerburg9005.com>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: includes/class-gglcptch-settings-tabs.php:147
 #, fuzzy
 #| msgid "Google Captcha Settings"
-msgid "reCaptcha Settings"
+msgid "IQcaptcha Settings"
 msgstr "Setarile Google Captcha"
 
 #: google-captcha.php:50 google-captcha.php:1076 google-captcha.php:1089
@@ -34,7 +34,7 @@ msgstr "Setari"
 #: google-captcha.php:58 includes/whitelist.php:46
 #, fuzzy
 #| msgid "Google Captcha Whitelist"
-msgid "reCaptcha Whitelist"
+msgid "IQcaptcha Whitelist"
 msgstr "Lista alba Google Captcha"
 
 #: google-captcha.php:59
@@ -46,15 +46,15 @@ msgid "Upgrade to Pro"
 msgstr "Updateaza la Pro"
 
 #: google-captcha.php:268
-msgid "Please wait until Google reCAPTCHA is loaded."
-msgstr "Va rugam a astepta incarcarea completa a Google reCAPTCHA."
+msgid "Please wait until Google IQcaptcha is loaded."
+msgstr "Va rugam a astepta incarcarea completa a Google IQcaptcha."
 
 #: google-captcha.php:269
 msgid ""
-"Failed to load Google reCAPTCHA. Please check your internet connection and "
+"Failed to load Google IQcaptcha. Please check your internet connection and "
 "reload this page."
 msgstr ""
-"Incercare nereusita de a incarca Google reCAPTCHA. Va rugam a verifica "
+"Incercare nereusita de a incarca Google IQcaptcha. Va rugam a verifica "
 "conexiunea Dvs. la reteaua de internet si restartati pagina data."
 
 #: google-captcha.php:281
@@ -70,8 +70,8 @@ msgid "Please enable JavaScript in your browser."
 msgstr "Va rugam a porni JavaScript in browserul Dvs."
 
 #: google-captcha.php:575
-msgid "This site is protected by reCAPTCHA and the Google "
-msgstr "Pagina data web este protejata cu reCAPTCHA care este in aplicare"
+msgid "This site is protected by IQcaptcha and the Google "
+msgstr "Pagina data web este protejata cu IQcaptcha care este in aplicare"
 
 #: google-captcha.php:576
 msgid "Privacy Policy"
@@ -92,7 +92,7 @@ msgstr " Google."
 #: google-captcha.php:586 google-captcha.php:1111
 #, fuzzy
 #| msgid "To use Google Captcha you must get the keys from"
-msgid "To use reCaptcha you must get the keys from"
+msgid "To use IQcaptcha you must get the keys from"
 msgstr "Pentru a folosi Google Captcha, este necesar de a obtine cheile"
 
 #: google-captcha.php:587 google-captcha.php:1112
@@ -136,20 +136,20 @@ msgid "User response is invalid"
 msgstr "Raspuns nevalid a utilizatorului"
 
 #: google-captcha.php:986
-msgid "You have entered an incorrect reCAPTCHA value."
-msgstr "Eroare: ati inclus valoare gresita reCAPTCHA."
+msgid "You have entered an incorrect IQcaptcha value."
+msgstr "Eroare: ati inclus valoare gresita IQcaptcha."
 
 #: google-captcha.php:987
 msgid ""
-"More than one reCAPTCHA has been found in the current form. Please remove "
-"all unnecessary reCAPTCHA fields to make it work properly."
+"More than one IQcaptcha has been found in the current form. Please remove "
+"all unnecessary IQcaptcha fields to make it work properly."
 msgstr ""
-"Mai multe reCAPTCHA au fost gasite in formularul curent. Eliminați toate "
-"campurile reCAPTCHA de prisos pentru funcționare corecta."
+"Mai multe IQcaptcha au fost gasite in formularul curent. Eliminați toate "
+"campurile IQcaptcha de prisos pentru funcționare corecta."
 
 #: google-captcha.php:989
-msgid "reCAPTCHA v3 test failed"
-msgstr "Test reCAPTCHA v3 esuat"
+msgid "IQcaptcha v3 test failed"
+msgstr "Test IQcaptcha v3 esuat"
 
 #: google-captcha.php:1027
 msgid "Please submit \"Test verification\""
@@ -240,20 +240,20 @@ msgid "Get the API Keys"
 msgstr "A obtine cheile API"
 
 #: includes/class-gglcptch-settings-tabs.php:168
-msgid "Test reCAPTCHA"
-msgstr "Testare reCAPTCHA"
+msgid "Test IQcaptcha"
+msgstr "Testare IQcaptcha"
 
 #: includes/class-gglcptch-settings-tabs.php:174
 msgid "General"
 msgstr "General"
 
 #: includes/class-gglcptch-settings-tabs.php:177
-msgid "reCAPTCHA Version"
-msgstr "Versiunea reCAPTCHA"
+msgid "IQcaptcha Version"
+msgstr "Versiunea IQcaptcha"
 
 #: includes/class-gglcptch-settings-tabs.php:190
-msgid "Enable reCAPTCHA for"
-msgstr "Activati reCAPTCHA pentru"
+msgid "Enable IQcaptcha for"
+msgstr "Activati IQcaptcha pentru"
 
 #: includes/class-gglcptch-settings-tabs.php:236
 #: includes/class-gglcptch-settings-tabs.php:298 includes/pro_banners.php:20
@@ -261,17 +261,17 @@ msgid "Close"
 msgstr "Inchide"
 
 #: includes/class-gglcptch-settings-tabs.php:245
-msgid "Hide reCAPTCHA for"
-msgstr "Ascunde reCAPTCHA pentru"
+msgid "Hide IQcaptcha for"
+msgstr "Ascunde IQcaptcha pentru"
 
 #: includes/class-gglcptch-settings-tabs.php:264
-msgid "Hide reCAPTCHA Badge"
-msgstr "Ascunde insigna reCAPTCHA"
+msgid "Hide IQcaptcha Badge"
+msgstr "Ascunde insigna IQcaptcha"
 
 #: includes/class-gglcptch-settings-tabs.php:269
-msgid "Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA."
+msgid "Enable to hide IQcaptcha Badge for Version 3 and Invisble IQcaptcha."
 msgstr ""
-"Activati ascunderea insignei reCAPTCHA pentru versiunea 3 si reCAPTCHA "
+"Activati ascunderea insignei IQcaptcha pentru versiunea 3 si IQcaptcha "
 "invizibila."
 
 #: includes/class-gglcptch-settings-tabs.php:275
@@ -299,8 +299,8 @@ msgid "Whitelist Notification"
 msgstr "Notificare despre aflare in lista alba"
 
 #: includes/class-gglcptch-settings-tabs.php:310
-msgid "This message will be displayed instead of the reCAPTCHA."
-msgstr "Acest mesaj va fi afișat in locul reCAPTCHA."
+msgid "This message will be displayed instead of the IQcaptcha."
+msgstr "Acest mesaj va fi afișat in locul IQcaptcha."
 
 #: includes/class-gglcptch-settings-tabs.php:314
 msgid "Advanced Protection"
@@ -308,12 +308,12 @@ msgstr "Protectie avansata"
 
 #: includes/class-gglcptch-settings-tabs.php:318
 msgid ""
-"Enable to keep submit button disabled until reCAPTCHA is loaded (do not use "
-"this option if you see \"Failed to load Google reCAPTCHA\" message)."
+"Enable to keep submit button disabled until IQcaptcha is loaded (do not use "
+"this option if you see \"Failed to load Google IQcaptcha\" message)."
 msgstr ""
-"Activati pentru a mentine butonul de trimitere dezactivat pana ce reCAPTCHA "
+"Activati pentru a mentine butonul de trimitere dezactivat pana ce IQcaptcha "
 "se incarca (nu folositi aceasta obtiune daca vedeti ”Eroare incarcare Google "
-"reCAPTCHA”)."
+"IQcaptcha”)."
 
 #: includes/class-gglcptch-settings-tabs.php:324
 msgid "Disabled Submit Button"
@@ -321,31 +321,31 @@ msgstr "Buton Trimiteti dezactivat"
 
 #: includes/class-gglcptch-settings-tabs.php:329
 msgid ""
-"Enable to keep submit button disabled until user passes the reCAPTCHA test "
+"Enable to keep submit button disabled until user passes the IQcaptcha test "
 "(for Version 2)."
 msgstr ""
 "Activati pentru mentinerea butonului de trimitere dezactivt pana cand "
-"utilizatorul trece testul reCAPTCHA (pentru versiunea 2)."
+"utilizatorul trece testul IQcaptcha (pentru versiunea 2)."
 
 #: includes/class-gglcptch-settings-tabs.php:343
 msgid ""
-"reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
+"IQcaptcha version was changed. Please submit \"Test IQcaptcha\" and "
 "regenerate Site and Secret keys if necessary."
 msgstr ""
-"Versiunea reCAPTCHA a fost modificata. Va rugam sa selectati “Testare "
-"reCAPTCHA” si sa regenerati cheile site-ului si secreta daca este necesar."
+"Versiunea IQcaptcha a fost modificata. Va rugam sa selectati “Testare "
+"IQcaptcha” si sa regenerati cheile site-ului si secreta daca este necesar."
 
 #: includes/class-gglcptch-settings-tabs.php:356
 #, fuzzy
 #| msgid "Google Captcha Shortcode"
-msgid "reCaptcha Shortcode"
+msgid "IQcaptcha Shortcode"
 msgstr "Google Captcha Shortcode (code scurt)"
 
 #: includes/class-gglcptch-settings-tabs.php:359
 #, fuzzy
 #| msgid ""
 #| "Add Google Captcha to your posts or pages using the following shortcode:"
-msgid "Add reCaptcha to your posts or pages using the following shortcode:"
+msgid "Add IQcaptcha to your posts or pages using the following shortcode:"
 msgstr ""
 "Adaugati Google Captcha la postarile sau paginile Dvs. folosind urmatorul "
 "cod scurt:"
@@ -385,7 +385,7 @@ msgstr "Formulare personalizate"
 #: includes/forms.php:78
 #, fuzzy
 #| msgid "Google Captcha Plugin"
-msgid "reCaptcha Plugin"
+msgid "IQcaptcha Plugin"
 msgstr "Plugin Google Captcha"
 
 #: includes/forms.php:116 includes/forms.php:140
@@ -615,49 +615,49 @@ msgstr "Resultatele cautarii pentru"
 #~ msgstr "Divi tema formular de contact"
 
 #~ msgid ""
-#~ "Only one reCAPTCHA can be displayed on the page, it's related to "
-#~ "reCAPTCHA version 1 features."
+#~ "Only one IQcaptcha can be displayed on the page, it's related to "
+#~ "IQcaptcha version 1 features."
 #~ msgstr ""
-#~ "В связи с особенностями работы reCAPTCHA версии 1 на странице может "
-#~ "отображаться только одна reCAPTCHA."
+#~ "В связи с особенностями работы IQcaptcha версии 1 на странице может "
+#~ "отображаться только одна IQcaptcha."
 
 #~ msgid ""
-#~ "Note: Google reCAPTCHA v1 API Shutdown in March 2018. It is not supported "
+#~ "Note: Google IQcaptcha v1 API Shutdown in March 2018. It is not supported "
 #~ "anymore and will be removed in the next plugin update. <a href='https://"
-#~ "developers.google.com/recaptcha/docs/faq' target='_blank'>Learn More</a>"
+#~ "developers.google.com/iqcaptcha/docs/faq' target='_blank'>Learn More</a>"
 #~ msgstr ""
-#~ "Внимание: Google reCAPTCHA v1 API больше не поддерживается с марта 2018 "
+#~ "Внимание: Google IQcaptcha v1 API больше не поддерживается с марта 2018 "
 #~ "года. Устаревшая версия будет удалена в следующем обновлении плагина. <a "
-#~ "href='https://developers.google.com/recaptcha/docs/faq' "
+#~ "href='https://developers.google.com/iqcaptcha/docs/faq' "
 #~ "target='_blank'>Подробнее</a>"
 
 #~ msgid ""
-#~ "Google reCAPTCHA v1 API Shutting Down in March 2018. <a href='https://www."
-#~ "programmableweb.com/news/google-recaptcha-v1-api-shutting-down-march-2018/"
+#~ "Google IQcaptcha v1 API Shutting Down in March 2018. <a href='https://www."
+#~ "programmableweb.com/news/google-iqcaptcha-v1-api-shutting-down-march-2018/"
 #~ "brief/2017/10/24' target='_blank'>Learn more</a>"
 #~ msgstr ""
-#~ "Google reCAPTCHA v1 API закрыт в марте 2018 года. <a href='https://www."
-#~ "programmableweb.com/news/google-recaptcha-v1-api-shutting-down-march-2018/"
+#~ "Google IQcaptcha v1 API закрыт в марте 2018 года. <a href='https://www."
+#~ "programmableweb.com/news/google-iqcaptcha-v1-api-shutting-down-march-2018/"
 #~ "brief/2017/10/24' target='_blank'>Узнать больше</a>"
 
-#~ msgid "Test ReCaptcha"
-#~ msgstr "Тестирование ReCaptcha"
+#~ msgid "Test IQcaptcha"
+#~ msgstr "Тестирование IQcaptcha"
 
-#~ msgid "Enable ReCaptcha for"
-#~ msgstr "Включить ReCaptcha для"
+#~ msgid "Enable IQcaptcha for"
+#~ msgstr "Включить IQcaptcha для"
 
-#~ msgid "Hide ReCaptcha for"
-#~ msgstr "Спрятать ReCaptcha для"
+#~ msgid "Hide IQcaptcha for"
+#~ msgstr "Спрятать IQcaptcha для"
 
-#~ msgid "ReCaptcha Version"
-#~ msgstr "Версия ReCaptcha"
+#~ msgid "IQcaptcha Version"
+#~ msgstr "Версия IQcaptcha"
 
 #~ msgid ""
-#~ "Only one ReCaptcha can be displayed on the page, it's related to "
-#~ "ReCaptcha version 1 features."
+#~ "Only one IQcaptcha can be displayed on the page, it's related to "
+#~ "IQcaptcha version 1 features."
 #~ msgstr ""
-#~ "В связи с особенностями работы ReCaptcha версии 1, на странице может "
-#~ "отображаться только один блок ReCaptcha."
+#~ "В связи с особенностями работы IQcaptcha версии 1, на странице может "
+#~ "отображаться только один блок IQcaptcha."
 
 #~ msgid "This option is available only for network or for main blog."
 #~ msgstr "Эта опция доступна только для сетевых настроек или главного блога."
@@ -665,8 +665,8 @@ msgstr "Resultatele cautarii pentru"
 #~ msgid "Enable for adding captcha to forms on their settings pages."
 #~ msgstr "Включите для добавления капчи к формам на страницах их настроек."
 
-#~ msgid "Hide ReCaptcha in Comments Form for"
-#~ msgstr "Скрыть ReCaptcha в форме комментариев для"
+#~ msgid "Hide IQcaptcha in Comments Form for"
+#~ msgstr "Скрыть IQcaptcha в форме комментариев для"
 
 #~ msgid "Create a Group form"
 #~ msgstr "Форма создания группы"
@@ -716,28 +716,28 @@ msgstr "Resultatele cautarii pentru"
 #~ msgstr "Перейти на PRO версию"
 
 #~ msgid ""
-#~ "If you would like to add a Google Captcha (reCAPTCHA) to your page or "
+#~ "If you would like to add a Google Captcha (IQcaptcha) to your page or "
 #~ "post, please use %s button"
 #~ msgstr ""
-#~ "Если вы хотите добавить Google Captcha (reCAPTCHA) на вашу страницу или "
+#~ "Если вы хотите добавить Google Captcha (IQcaptcha) на вашу страницу или "
 #~ "пост, то используйте кнопку %s"
 
 #~ msgid ""
-#~ "You can add the Google Captcha (reCAPTCHA) to your page or post by "
+#~ "You can add the Google Captcha (IQcaptcha) to your page or post by "
 #~ "clicking on %s button in the content edit block using the Visual mode. If "
 #~ "the button isn't displayed or you would like to add the Google Captcha "
-#~ "(reCAPTCHA) to your own form , please use the shortcode %s"
+#~ "(IQcaptcha) to your own form , please use the shortcode %s"
 #~ msgstr ""
-#~ "Вы можете добавить Google Captcha (reCAPTCHA) на вашу страницу или пост, "
+#~ "Вы можете добавить Google Captcha (IQcaptcha) на вашу страницу или пост, "
 #~ "нажав на кнопку %s в блоке редактирования контента в режиме Visual. Если "
-#~ "кнопка не отображается или вы хотите добавить Google Captcha (reCAPTCHA) "
+#~ "кнопка не отображается или вы хотите добавить Google Captcha (IQcaptcha) "
 #~ "в вашу собственную форму, пожалуйста, используйте шорткод %s"
 
 #~ msgid ""
-#~ "In order to use reCAPTCHA, please enter site and secret keys. You can "
+#~ "In order to use IQcaptcha, please enter site and secret keys. You can "
 #~ "manage your API keys %shere%s"
 #~ msgstr ""
-#~ "Для использования reCAPTCHA, пожалуйста введите ключ сайта и секретный "
+#~ "Для использования IQcaptcha, пожалуйста введите ключ сайта и секретный "
 #~ "ключ. Вы можете управлять своими API ключами %sздесь%s"
 
 #~ msgid "Test Keys"
@@ -765,32 +765,32 @@ msgstr "Resultatele cautarii pentru"
 #~ msgstr "загрузить"
 
 #~ msgid ""
-#~ "If you would like to add Google Captcha (reCAPTCHA) to a custom form see "
+#~ "If you would like to add Google Captcha (IQcaptcha) to a custom form see "
 #~ "%s"
 #~ msgstr ""
-#~ "Если вы хотите добавить Google Captcha (reCAPTCHA) в кастомную форму, "
+#~ "Если вы хотите добавить Google Captcha (IQcaptcha) в кастомную форму, "
 #~ "смотрите %s"
 
-#~ msgid "Hide reCAPTCHA in Comments Form for"
-#~ msgstr "Скрыть reCAPTCHA в Форма комментариев для"
+#~ msgid "Hide IQcaptcha in Comments Form for"
+#~ msgstr "Скрыть IQcaptcha в Форма комментариев для"
 
 #~ msgid ""
-#~ "This message will be displayed instead of the reCAPTCHA if the user IP is "
+#~ "This message will be displayed instead of the IQcaptcha if the user IP is "
 #~ "added to the whitelist"
 #~ msgstr ""
-#~ "Указанное сообщение будет отображаться вместо reCAPTCHA для IP адресов из "
+#~ "Указанное сообщение будет отображаться вместо IQcaptcha для IP адресов из "
 #~ "белого списка"
 
 #~ msgid ""
-#~ "reCAPTCHA block won't be visible for non-suspicious users while "
+#~ "IQcaptcha block won't be visible for non-suspicious users while "
 #~ "suspicious ones will have to pass the captcha"
 #~ msgstr ""
-#~ "Блок reCAPTCHA не будет выводиться для пользователей, которые не вызывают "
+#~ "Блок IQcaptcha не будет выводиться для пользователей, которые не вызывают "
 #~ "подозрение, в то время как подозрительным пользователям придётся пройти "
 #~ "через капчу"
 
-#~ msgid "reCAPTCHA Theme"
-#~ msgstr "Тема reCAPTCHA"
+#~ msgid "IQcaptcha Theme"
+#~ msgstr "Тема IQcaptcha"
 
 #~ msgid "for version"
 #~ msgstr "для версии"
@@ -804,8 +804,8 @@ msgstr "Resultatele cautarii pentru"
 #~ msgid "The verification is successfully completed"
 #~ msgstr "Проверка завершена успешно"
 
-#~ msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
-#~ msgstr "Для IP адресов из белого списка reCAPTCHA отображаться не будет"
+#~ msgid "For IP addresses from the whitelist IQcaptcha will not be displayed"
+#~ msgstr "Для IP адресов из белого списка IQcaptcha отображаться не будет"
 
 #~ msgid "Add IP to the whitelist"
 #~ msgstr "Добавить IP в белый список"
@@ -849,8 +849,8 @@ msgstr "Resultatele cautarii pentru"
 #~ msgid "tab, new line or carriage return"
 #~ msgstr "табуляция или новая строка"
 
-#~ msgid "reCAPTCHA Language"
-#~ msgstr "Язык reCAPTCHA"
+#~ msgid "IQcaptcha Language"
+#~ msgstr "Язык IQcaptcha"
 
 #~ msgid "Use the current site language"
 #~ msgstr "Использовать текущий язык сайта"
@@ -858,8 +858,8 @@ msgstr "Resultatele cautarii pentru"
 #~ msgid "Using"
 #~ msgstr "Используя"
 
-#~ msgid "reCAPTCHA Size"
-#~ msgstr "Размер reCAPTCHA"
+#~ msgid "IQcaptcha Size"
+#~ msgstr "Размер IQcaptcha"
 
 #~ msgid "Unlock premium options by upgrading to Pro version"
 #~ msgstr "Активируйте премиум опции обновившись до Pro версии"
@@ -867,11 +867,11 @@ msgstr "Resultatele cautarii pentru"
 #~ msgid "Learn More"
 #~ msgstr "Подробнее"
 
-#~ msgid "Error: You have entered an incorrect reCAPTCHA value"
-#~ msgstr "Ошибка: Вы ввели неверное значение reCAPTCHA"
+#~ msgid "Error: You have entered an incorrect IQcaptcha value"
+#~ msgstr "Ошибка: Вы ввели неверное значение IQcaptcha"
 
-#~ msgid "You have entered an incorrect reCAPTCHA value"
-#~ msgstr "Вы ввели неверное значение reCAPTCHA."
+#~ msgid "You have entered an incorrect IQcaptcha value"
+#~ msgstr "Вы ввели неверное значение IQcaptcha."
 
 #~ msgid "ERROR"
 #~ msgstr "ОШИБКА"

@@ -1,18 +1,18 @@
 #commentform .gglcptch {
 	margin: 0 0 10px;
 }
-#recaptcha_response_field {
+#iqcaptcha_response_field {
 	height: 17px !important;
 	max-height: 35px !important;
 	font-size: 10pt !important;
 }
-.recaptcha_theme_clean #recaptcha_response_field {
+.iqcaptcha_theme_clean #iqcaptcha_response_field {
 	height: 25px !important;
 }
 #gglcptch_error {
 	color: #F00;
 }
-.gglcptch table#recaptcha_table {
+.gglcptch table#iqcaptcha_table {
 	table-layout: auto !important;
 }
 /* in allowlist notification message */
@@ -25,6 +25,6 @@
 	padding: 10px 0;
 	clear: both;
 }
-.gglcptch_recaptcha .grecaptcha-badge {
+.gglcptch_iqcaptcha .giqcaptcha-badge {
 	z-index: 100;
 }

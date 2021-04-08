@@ -1,21 +1,21 @@
 <?php
 /*
-* General functions for BestWebSoft plugins
+* General functions for ballerburg9005 plugins
 */
 
 require( dirname( __FILE__ ) . '/deprecated.php' );
 require_once( dirname( __FILE__ ) . '/deactivation-form.php' );
 
 /**
- * Function to add 'bestwebsoft' slug for BWS_Menu MO file if BWS_Menu loaded from theme.
+ * Function to add 'ballerburg9005' slug for BWS_Menu MO file if BWS_Menu loaded from theme.
  *
  * @since 1.9.7
  */
 if ( ! function_exists ( 'bws_get_mofile' ) ) {
 	function bws_get_mofile( $mofile, $domain ) {
-		if ( 'bestwebsoft' == $domain ) {
+		if ( 'ballerburg9005' == $domain ) {
 			$locale = get_locale();
-			return str_replace( $locale, "bestwebsoft-{$locale}", $mofile );
+			return str_replace( $locale, "ballerburg9005-{$locale}", $mofile );
 		}
 
 		return $mofile;
@@ -25,10 +25,10 @@ if ( ! function_exists ( 'bws_get_mofile' ) ) {
 /* Internationalization, first(!) */
 if ( isset( $bws_menu_source ) && 'themes' == $bws_menu_source ) {
 	add_filter( 'load_textdomain_mofile', 'bws_get_mofile', 10, 2 );
-	load_theme_textdomain( 'bestwebsoft', get_stylesheet_directory() . '/inc/bws_menu/languages' );
+	load_theme_textdomain( 'ballerburg9005', get_stylesheet_directory() . '/inc/bws_menu/languages' );
 	remove_filter( 'load_textdomain_mofile', 'bws_get_mofile' );
 } else {
-	load_plugin_textdomain( 'bestwebsoft', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'ballerburg9005', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 /**
@@ -70,12 +70,12 @@ if ( ! function_exists( 'bws_wp_min_version_check' ) ) {
 					sprintf(
 						"<strong>%s</strong> %s <strong>WordPress %s</strong> %s <br /><br />%s <a href='%s'>%s</a>.",
 						$plugin_info['Name'],
-						__( 'requires', 'bestwebsoft' ),
+						__( 'requires', 'ballerburg9005' ),
 						$require_wp,
-						__( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'bestwebsoft' ),
-						__( 'Back to the WordPress', 'bestwebsoft' ),
+						__( 'or higher, that is why it has been deactivated! Please upgrade WordPress and try again.', 'ballerburg9005' ),
+						__( 'Back to the WordPress', 'ballerburg9005' ),
 						$admin_url,
-						__( 'Plugins page', 'bestwebsoft' )
+						__( 'Plugins page', 'ballerburg9005' )
 					)
 				);
 			}
@@ -89,9 +89,9 @@ if ( ! function_exists( 'bws_plugin_reviews_block' ) ) {
 	function bws_plugin_reviews_block( $plugin_name, $plugin_slug ) { ?>
 		<div class="bws-plugin-reviews">
 			<div class="bws-plugin-reviews-rate">
-				<?php _e( 'Like the plugin?', 'bestwebsoft' ); ?>
-				<a href="https://wordpress.org/support/view/plugin-reviews/<?php echo esc_attr( $plugin_slug ); ?>?filter=5" target="_blank" title="<?php printf( __( '%s reviews', 'bestwebsoft' ), sanitize_text_field( $plugin_name ) ); ?>">
-					<?php _e( 'Rate it', 'bestwebsoft' ); ?>
+				<?php _e( 'Like the plugin?', 'ballerburg9005' ); ?>
+				<a href="https://wordpress.org/support/view/plugin-reviews/<?php echo esc_attr( $plugin_slug ); ?>?filter=5" target="_blank" title="<?php printf( __( '%s reviews', 'ballerburg9005' ), sanitize_text_field( $plugin_name ) ); ?>">
+					<?php _e( 'Rate it', 'ballerburg9005' ); ?>
 					<span class="dashicons dashicons-star-filled"></span>
 					<span class="dashicons dashicons-star-filled"></span>
 					<span class="dashicons dashicons-star-filled"></span>
@@ -100,12 +100,12 @@ if ( ! function_exists( 'bws_plugin_reviews_block' ) ) {
 				</a>
 			</div>
 			<div class="bws-plugin-reviews-support">
-				<?php _e( 'Need help?', 'bestwebsoft' ); ?>
-				<a href="https://support.bestwebsoft.com"><?php _e( 'Visit Help Center', 'bestwebsoft' ); ?></a>
+				<?php _e( 'Need help?', 'ballerburg9005' ); ?>
+				<a href="https://support.ballerburg9005.com"><?php _e( 'Visit Help Center', 'ballerburg9005' ); ?></a>
 			</div>
 			<div class="bws-plugin-reviews-donate">
-				<?php _e( 'Want to support the plugin?', 'bestwebsoft' ); ?>
-				<a href="https://bestwebsoft.com/donate/"><?php _e( 'Donate', 'bestwebsoft' ); ?></a>
+				<?php _e( 'Want to support the plugin?', 'ballerburg9005' ); ?>
+				<a href="https://ballerburg9005.com/donate/"><?php _e( 'Donate', 'ballerburg9005' ); ?></a>
 			</div>
 		</div>
 	<?php }
@@ -125,7 +125,7 @@ if ( ! function_exists ( 'bws_plugin_update_row' ) ) {
 						<div class="update-message' . $div_class . '"' . $style . '>';
 						if ( $wp_version >= 4.6 )
 							echo '<p>';
-						echo '<strong>' . __( 'WARNING: Illegal use notification', 'bestwebsoft' ) . '.</strong> ' . __( 'You can use one license of the Pro plugin for one domain only. Please check and edit your license or domain if necessary using your personal Client Area. We strongly recommend you to solve the problem within 24 hours, otherwise the Pro plugin will be deactivated.', 'bestwebsoft' ) . ' <a target="_blank" href="https://support.bestwebsoft.com/hc/en-us/articles/204240089">' . __( 'Learn More', 'bestwebsoft' ) . '</a>';
+						echo '<strong>' . __( 'WARNING: Illegal use notification', 'ballerburg9005' ) . '.</strong> ' . __( 'You can use one license of the Pro plugin for one domain only. Please check and edit your license or domain if necessary using your personal Client Area. We strongly recommend you to solve the problem within 24 hours, otherwise the Pro plugin will be deactivated.', 'ballerburg9005' ) . ' <a target="_blank" href="https://support.ballerburg9005.com/hc/en-us/articles/204240089">' . __( 'Learn More', 'ballerburg9005' ) . '</a>';
 						if ( $wp_version >= 4.6 )
 							echo '</p>';
 						echo '</div>
@@ -142,9 +142,9 @@ if ( ! function_exists ( 'bws_plugin_update_row' ) ) {
 						if ( $wp_version >= 4.6 )
 							echo '<p>';
 						if ( isset( $bstwbsftwppdtplgns_options['trial'][ $plugin_key ] ) && $link_slug != false ) {
-							echo __( 'Notice: Your Pro Trial license has expired. To continue using the plugin, you should buy a Pro license', 'bestwebsoft' ) . ' - <a href="https://bestwebsoft.com/products/wordpress/plugins/' . esc_attr( $link_slug ) . '/">https://bestwebsoft.com/products/wordpress/plugins/' . esc_attr( $link_slug ) . '/</a>';
+							echo __( 'Notice: Your Pro Trial license has expired. To continue using the plugin, you should buy a Pro license', 'ballerburg9005' ) . ' - <a href="https://ballerburg9005.com/products/wordpress/plugins/' . esc_attr( $link_slug ) . '/">https://ballerburg9005.com/products/wordpress/plugins/' . esc_attr( $link_slug ) . '/</a>';
 						} else {
-							echo __( 'Your license has expired. To continue getting top-priority support and plugin updates, you should extend it.', 'bestwebsoft' ) . ' <a target="_new" href="https://support.bestwebsoft.com/entries/53487136">' . __( "Learn more", 'bestwebsoft' ) . '</a>';
+							echo __( 'Your license has expired. To continue getting top-priority support and plugin updates, you should extend it.', 'ballerburg9005' ) . ' <a target="_new" href="https://support.ballerburg9005.com/entries/53487136">' . __( "Learn more", 'ballerburg9005' ) . '</a>';
 						}
 						if ( $wp_version >= 4.6 )
 							echo '</p>';
@@ -162,12 +162,12 @@ if ( ! function_exists ( 'bws_plugin_update_row' ) ) {
 						if ( $wp_version >= 4.6 )
 							echo '<p>';
 						if ( $free_plugin_name != false ) {
-							printf( __( 'Notice: You are using the Pro Trial license of %s plugin.', 'bestwebsoft' ), $free_plugin_name );
+							printf( __( 'Notice: You are using the Pro Trial license of %s plugin.', 'ballerburg9005' ), $free_plugin_name );
 						} else {
-							_e( 'Notice: You are using the Pro Trial license of plugin.', 'bestwebsoft' );
+							_e( 'Notice: You are using the Pro Trial license of plugin.', 'ballerburg9005' );
 						}
 						if ( isset( $bstwbsftwppdtplgns_options['time_out'][ $plugin_key ] ) )
-							echo ' ' . __( 'The Pro Trial license will expire on', 'bestwebsoft' ) . ' ' . $bstwbsftwppdtplgns_options['time_out'][ $plugin_key ] . '.';
+							echo ' ' . __( 'The Pro Trial license will expire on', 'ballerburg9005' ) . ' ' . $bstwbsftwppdtplgns_options['time_out'][ $plugin_key ] . '.';
 						if ( $wp_version >= 4.6 )
 							echo '</p>';
 					echo '</div>
@@ -196,16 +196,16 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 					$single_banner_value = $bws_plugin_banner_go_pro[ $value[0] ]; ?>
 					<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
 						<div class="<?php echo $single_banner_value['prefix']; ?>_message bws_banner_on_plugin_page bws_go_pro_banner" style="display: none;">
-							<button class="<?php echo $single_banner_value['prefix']; ?>_close_icon close_icon notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'bestwebsoft' ); ?>"></button>
+							<button class="<?php echo $single_banner_value['prefix']; ?>_close_icon close_icon notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'ballerburg9005' ); ?>"></button>
 							<div class="icon">
 								<img title="" src="<?php echo esc_attr( $single_banner_value['banner_url'] ); ?>" alt="" />
 							</div>
 							<div class="text">
-								<?php _e( 'It’s time to upgrade your', 'bestwebsoft' ); ?> <strong><?php echo $single_banner_value['plugin_info']['Name']; ?> plugin</strong> <?php _e( 'to', 'bestwebsoft' ); ?> <strong>Pro</strong> <?php _e( 'version!', 'bestwebsoft' ); ?><br />
-								<span><?php _e( 'Extend standard plugin functionality with new great options.', 'bestwebsoft' ); ?></span>
+								<?php _e( 'It’s time to upgrade your', 'ballerburg9005' ); ?> <strong><?php echo $single_banner_value['plugin_info']['Name']; ?> plugin</strong> <?php _e( 'to', 'ballerburg9005' ); ?> <strong>Pro</strong> <?php _e( 'version!', 'ballerburg9005' ); ?><br />
+								<span><?php _e( 'Extend standard plugin functionality with new great options.', 'ballerburg9005' ); ?></span>
 							</div>
 							<div class="button_div">
-								<a class="button" target="_blank" href="<?php echo $single_banner_value['bws_link']; ?>"><?php _e( 'Learn More', 'bestwebsoft' ); ?></a>
+								<a class="button" target="_blank" href="<?php echo $single_banner_value['bws_link']; ?>"><?php _e( 'Learn More', 'ballerburg9005' ); ?></a>
 							</div>
 						</div>
 					</div>
@@ -219,11 +219,11 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 			foreach ( $bws_plugin_banner_timeout as $banner_value ) { ?>
 				<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
 					<div class="<?php echo $banner_value['prefix']; ?>_message_timeout bws_banner_on_plugin_page bws_banner_timeout" style="display:none;">
-						<button class="<?php echo $banner_value['prefix']; ?>_close_icon close_icon notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'bestwebsoft' ); ?>"></button>
+						<button class="<?php echo $banner_value['prefix']; ?>_close_icon close_icon notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'ballerburg9005' ); ?>"></button>
 						<div class="icon">
 							<img title="" src="<?php echo esc_attr( $banner_value['banner_url'] ); ?>" alt="" />
 						</div>
-						<div class="text"><?php printf( __( "Your license key for %s expires on %s and you won't be granted TOP-PRIORITY SUPPORT or UPDATES.", 'bestwebsoft' ), '<strong>' . $banner_value['plugin_name'] . '</strong>', $bstwbsftwppdtplgns_options['time_out'][ $banner_value['plugin_key'] ] ); ?> <a target="_new" href="https://support.bestwebsoft.com/entries/53487136"><?php _e( "Learn more", 'bestwebsoft' ); ?></a></div>
+						<div class="text"><?php printf( __( "Your license key for %s expires on %s and you won't be granted TOP-PRIORITY SUPPORT or UPDATES.", 'ballerburg9005' ), '<strong>' . $banner_value['plugin_name'] . '</strong>', $bstwbsftwppdtplgns_options['time_out'][ $banner_value['plugin_key'] ] ); ?> <a target="_new" href="https://support.ballerburg9005.com/entries/53487136"><?php _e( "Learn more", 'ballerburg9005' ); ?></a></div>
 					</div>
 				</div>
 			<?php }
@@ -236,9 +236,9 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 					<?php printf(
 						"<strong>%s</strong> %s <strong>WordPress %s</strong> %s",
 						$value['name'],
-						__( 'requires', 'bestwebsoft' ),
+						__( 'requires', 'ballerburg9005' ),
 						$value['version'],
-						__( 'or higher! We do not guarantee that our plugin will work correctly. Please upgrade to WordPress latest version.', 'bestwebsoft' )
+						__( 'or higher! We do not guarantee that our plugin will work correctly. Please upgrade to WordPress latest version.', 'ballerburg9005' )
 					); ?>
 				</div>
 			<?php }
@@ -253,17 +253,17 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 							<img title="" src="<?php echo esc_attr( $bws_plugin_banner_to_settings[0]['banner_url'] ); ?>" alt="" />
 						</div>
 						<div class="text">
-							<strong><?php printf( __( 'Thank you for installing %s plugin!', 'bestwebsoft' ), $bws_plugin_banner_to_settings[0]['plugin_info']['Name'] ); ?></strong>
+							<strong><?php printf( __( 'Thank you for installing %s plugin!', 'ballerburg9005' ), $bws_plugin_banner_to_settings[0]['plugin_info']['Name'] ); ?></strong>
 							<br />
-							<?php _e( "Let's get started", 'bestwebsoft' ); ?>:
-							<a href="<?php echo esc_url( self_admin_url( $bws_plugin_banner_to_settings[0]['settings_url'] ) ); ?>"><?php _e( 'Settings', 'bestwebsoft' ); ?></a>
+							<?php _e( "Let's get started", 'ballerburg9005' ); ?>:
+							<a href="<?php echo esc_url( self_admin_url( $bws_plugin_banner_to_settings[0]['settings_url'] ) ); ?>"><?php _e( 'Settings', 'ballerburg9005' ); ?></a>
 							<?php if ( false != $bws_plugin_banner_to_settings[0]['post_type_url'] ) { ?>
-								<?php _e( 'or', 'bestwebsoft' ); ?>
-								<a href="<?php echo esc_url( self_admin_url( $bws_plugin_banner_to_settings[0]['post_type_url'] ) ); ?>"><?php _e( 'Add New', 'bestwebsoft' ); ?></a>
+								<?php _e( 'or', 'ballerburg9005' ); ?>
+								<a href="<?php echo esc_url( self_admin_url( $bws_plugin_banner_to_settings[0]['post_type_url'] ) ); ?>"><?php _e( 'Add New', 'ballerburg9005' ); ?></a>
 							<?php } ?>
 						</div>
 						<form action="" method="post">
-							<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'bestwebsoft' ); ?>"></button>
+							<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'ballerburg9005' ); ?>"></button>
 							<input type="hidden" name="bws_hide_settings_notice_<?php echo $bws_plugin_banner_to_settings[0]['plugin_options_name']; ?>" value="hide" />
 							<?php wp_nonce_field( plugin_basename( __FILE__ ), 'bws_settings_nonce_name' ); ?>
 						</form>
@@ -273,15 +273,15 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 				<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
 					<div class="bws_banner_on_plugin_page bws_banner_to_settings_joint">
 						<form action="" method="post">
-							<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'bestwebsoft' ); ?>"></button>
+							<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'ballerburg9005' ); ?>"></button>
 							<div class="bws-text">
 								<div class="icon">
 									<span class="dashicons dashicons-admin-plugins"></span>
 								</div>
-								<strong><?php _e( 'Thank you for installing plugins by BestWebSoft!', 'bestwebsoft' ); ?></strong>
+								<strong><?php _e( 'Thank you for installing plugins by ballerburg9005!', 'ballerburg9005' ); ?></strong>
 								<div class="hide-if-no-js bws-more-links">
-									<a href="#" class="bws-more"><?php _e( 'More Details', 'bestwebsoft' ); ?></a>
-									<a href="#" class="bws-less hidden"><?php _e( 'Less Details', 'bestwebsoft' ); ?></a>
+									<a href="#" class="bws-more"><?php _e( 'More Details', 'ballerburg9005' ); ?></a>
+									<a href="#" class="bws-less hidden"><?php _e( 'Less Details', 'ballerburg9005' ); ?></a>
 								</div>
 								<?php wp_nonce_field( plugin_basename( __FILE__ ), 'bws_settings_nonce_name' ); ?>
 								<div class="clear"></div>
@@ -289,9 +289,9 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 							<div class="bws-details hide-if-js">
 								<?php foreach ( $bws_plugin_banner_to_settings as $value ) { ?>
 									<div>
-										<strong><?php echo str_replace( ' by BestWebSoft', '', $value['plugin_info']['Name'] ); ?></strong>&ensp;<a href="<?php echo esc_url( self_admin_url( $value['settings_url'] ) ); ?>"><?php _e( 'Settings', 'bestwebsoft' ); ?></a>
+										<strong><?php echo str_replace( ' by ballerburg9005', '', $value['plugin_info']['Name'] ); ?></strong>&ensp;<a href="<?php echo esc_url( self_admin_url( $value['settings_url'] ) ); ?>"><?php _e( 'Settings', 'ballerburg9005' ); ?></a>
 										<?php if ( false != $value['post_type_url'] ) { ?>
-											&ensp;|&ensp;<a target="_blank" href="<?php echo esc_url( self_admin_url( $value['post_type_url'] ) ); ?>"><?php _e( 'Add New', 'bestwebsoft' ); ?></a>
+											&ensp;|&ensp;<a target="_blank" href="<?php echo esc_url( self_admin_url( $value['post_type_url'] ) ); ?>"><?php _e( 'Add New', 'ballerburg9005' ); ?></a>
 										<?php } ?>
 										<input type="hidden" name="bws_hide_settings_notice_<?php echo $value['plugin_options_name']; ?>" value="hide" />
 									</div>
@@ -309,7 +309,7 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 		*/
 		if ( ! empty( $bstwbsftwppdtplgns_options['deprecated_function'] ) ) { ?>
 			<div class="update-nag">
-				<strong><?php _e( 'Deprecated function(-s) is used on the site here:', 'bestwebsoft' ); ?></strong>
+				<strong><?php _e( 'Deprecated function(-s) is used on the site here:', 'ballerburg9005' ); ?></strong>
 				<?php $i = 1;
 				foreach ( $bstwbsftwppdtplgns_options['deprecated_function'] as $function_name => $attr ) {
 					if ( 1 != $i )
@@ -323,7 +323,7 @@ if ( ! function_exists( 'bws_admin_notices' ) ) {
 					$i++;
 				} ?>.
 				<br/>
-				<?php _e( 'This function(-s) will be removed over time. Please update the product(-s).', 'bestwebsoft' ); ?>
+				<?php _e( 'This function(-s) will be removed over time. Please update the product(-s).', 'ballerburg9005' ); ?>
 			</div>
 			<?php if ( is_multisite() )
 				update_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options );
@@ -340,7 +340,7 @@ if ( ! function_exists( 'bws_plugin_banner_go_pro' ) ) {
 		if ( ! isset( $plugin_options['first_install'] ) || strtotime( '-1 week' ) < $plugin_options['first_install'] )
 			return;
 
-		$bws_link = esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $bws_link_slug . '/?k=' . $link_key . '&pn=' . $link_pn . '&v=' . $plugin_info["Version"] . '&wp_v=' . $wp_version );
+		$bws_link = esc_url( 'https://ballerburg9005.com/products/wordpress/plugins/' . $bws_link_slug . '/?k=' . $link_key . '&pn=' . $link_pn . '&v=' . $plugin_info["Version"] . '&wp_v=' . $wp_version );
 
 		if ( false == strrpos( $banner_url_or_slug, '/' ) ) {
 			$banner_url_or_slug = '//ps.w.org/' . $banner_url_or_slug . '/assets/icon-256x256.png';
@@ -467,12 +467,12 @@ if ( ! function_exists( 'bws_plugin_suggest_feature_banner' ) ) {
 					<img title="" src="<?php echo esc_attr( $banner_url_or_slug ); ?>" alt="" />
 				</div>
 				<div class="text">
-					<strong><?php printf( __( 'Thank you for choosing %s plugin!', 'bestwebsoft' ), $plugin_info['Name'] ); ?></strong><br />
-					<?php _e( "If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it!", 'bestwebsoft' ); ?>
-					<a target="_blank" href="https://support.bestwebsoft.com/hc/en-us/requests/new"><?php _e( 'Suggest a Feature', 'bestwebsoft' ); ?></a>
+					<strong><?php printf( __( 'Thank you for choosing %s plugin!', 'ballerburg9005' ), $plugin_info['Name'] ); ?></strong><br />
+					<?php _e( "If you have a feature, suggestion or idea you'd like to see in the plugin, we'd love to hear about it!", 'ballerburg9005' ); ?>
+					<a target="_blank" href="https://support.ballerburg9005.com/hc/en-us/requests/new"><?php _e( 'Suggest a Feature', 'ballerburg9005' ); ?></a>
 				</div>
 				<form action="" method="post">
-					<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'bestwebsoft' ); ?>"></button>
+					<button class="notice-dismiss bws_hide_settings_notice" title="<?php _e( 'Close notice', 'ballerburg9005' ); ?>"></button>
 					<input type="hidden" name="bws_hide_suggest_feature_banner_<?php echo $plugin_options_name; ?>" value="hide" />
 					<?php wp_nonce_field( $plugin_info['Name'], 'bws_settings_nonce_name' ); ?>
 				</form>
@@ -485,8 +485,8 @@ if ( ! function_exists( 'bws_show_settings_notice' ) ) {
 	function bws_show_settings_notice() { ?>
 		<div id="bws_save_settings_notice" class="updated fade below-h2" style="display:none;">
 			<p>
-				<strong><?php _e( 'Notice', 'bestwebsoft' ); ?></strong>: <?php _e( "The plugin's settings have been changed.", 'bestwebsoft' ); ?>
-				<a class="bws_save_anchor" href="#bws-submit-button"><?php _e( 'Save Changes', 'bestwebsoft' ); ?></a>
+				<strong><?php _e( 'Notice', 'ballerburg9005' ); ?></strong>: <?php _e( "The plugin's settings have been changed.", 'ballerburg9005' ); ?>
+				<a class="bws_save_anchor" href="#bws-submit-button"><?php _e( 'Save Changes', 'ballerburg9005' ); ?></a>
 			</p>
 		</div>
 	<?php }
@@ -500,7 +500,7 @@ if ( ! function_exists( 'bws_hide_premium_options' ) ) {
 		$options['hide_premium_options'][] = get_current_user_id();
 
 		return array(
-				'message' => __( 'You can always look at premium options by checking the "Pro Options" in the "Misc" tab.', 'bestwebsoft' ),
+				'message' => __( 'You can always look at premium options by checking the "Pro Options" in the "Misc" tab.', 'ballerburg9005' ),
 				'options' => $options );
 	}
 }
@@ -654,8 +654,8 @@ if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) ) {
 		if ( ! empty( $bws_shortcode_list ) ) {
 			/* TinyMCE Shortcode Plugin */
 			$script = "var bws_shortcode_button = {
-					'label': '" . esc_attr__( "Add BWS Shortcode", "bestwebsoft" ) . "',
-					'title': '" . esc_attr__( "Add BWS Plugins Shortcode", "bestwebsoft" ) . "',
+					'label': '" . esc_attr__( "Add BWS Shortcode", "ballerburg9005" ) . "',
+					'title': '" . esc_attr__( "Add BWS Plugins Shortcode", "ballerburg9005" ) . "',
 					'function_name': [";
 						foreach ( $bws_shortcode_list as $value ) {
 							if ( isset( $value['js_function'] ) )
@@ -676,7 +676,7 @@ if ( ! function_exists ( 'bws_admin_enqueue_scripts' ) ) {
 						'click' 	=> false,
 						'onload' 	=> true
 					),
-					'content' 		=> '<h3>' . __( 'Add shortcode', 'bestwebsoft' ) . '</h3><p>' . __( "Add BestWebSoft plugins' shortcodes using this button.", 'bestwebsoft' ) . '</p>',
+					'content' 		=> '<h3>' . __( 'Add shortcode', 'ballerburg9005' ) . '</h3><p>' . __( "Add ballerburg9005 plugins' shortcodes using this button.", 'ballerburg9005' ) . '</p>',
 					'position' => array(
 						'edge' 		=> 'right'
 					),
@@ -762,7 +762,7 @@ if ( ! class_exists( 'BWS_admin_tooltip' ) ) {
 				'buttons'		=> array(
 					'close' 	=> array(
 						'type' => 'dismiss',
-						'text' => __( 'Close', 'bestwebsoft' ),
+						'text' => __( 'Close', 'ballerburg9005' ),
 					),
 				),
 				'position' => array(
@@ -848,11 +848,11 @@ if ( ! class_exists( 'BWS_admin_tooltip' ) ) {
 if ( ! function_exists ( 'bws_form_restore_default_confirm' ) ) {
 	function bws_form_restore_default_confirm( $plugin_basename ) { ?>
 		<div>
-			<p><?php _e( 'Are you sure you want to restore default settings?', 'bestwebsoft' ) ?></p>
+			<p><?php _e( 'Are you sure you want to restore default settings?', 'ballerburg9005' ) ?></p>
 			<form method="post" action="">
 				<p>
-					<button class="button button-primary" name="bws_restore_confirm"><?php _e( 'Yes, restore all settings', 'bestwebsoft' ) ?></button>
-					<button class="button" name="bws_restore_deny"><?php _e( 'No, go back to the settings page', 'bestwebsoft' ) ?></button>
+					<button class="button button-primary" name="bws_restore_confirm"><?php _e( 'Yes, restore all settings', 'ballerburg9005' ) ?></button>
+					<button class="button" name="bws_restore_deny"><?php _e( 'No, go back to the settings page', 'ballerburg9005' ) ?></button>
 					<?php wp_nonce_field( $plugin_basename, 'bws_settings_nonce_name' ); ?>
 				</p>
 			</form>
@@ -894,7 +894,7 @@ if ( ! function_exists( 'bws_shortcode_media_button_popup' ) ) {
 			<div id="bws_shortcode_popup" style="display:none;">
 				<div id="bws_shortcode_popup_block">
 					<div id="bws_shortcode_select_plugin">
-						<h4><?php _e( 'Plugin', 'bestwebsoft' ); ?></h4>
+						<h4><?php _e( 'Plugin', 'ballerburg9005' ); ?></h4>
 						<select name="bws_shortcode_select" id="bws_shortcode_select">
 							<?php foreach ( $bws_shortcode_list as $key => $value ) { ?>
 								<option value="<?php echo esc_attr( $key ); ?>"><?php echo $value['name']; ?></option>
@@ -903,12 +903,12 @@ if ( ! function_exists( 'bws_shortcode_media_button_popup' ) ) {
 					</div>
 					<div class="clear"></div>
 					<div id="bws_shortcode_content">
-						<h4><?php _e( 'Shortcode settings', 'bestwebsoft' ); ?></h4>
+						<h4><?php _e( 'Shortcode settings', 'ballerburg9005' ); ?></h4>
 						<?php echo apply_filters( 'bws_shortcode_button_content', '' ); ?>
 					</div>
 					<div class="clear"></div>
 					<div id="bws_shortcode_content_bottom">
-						<p><?php _e( 'The shortcode will be inserted', 'bestwebsoft' ); ?></p>
+						<p><?php _e( 'The shortcode will be inserted', 'ballerburg9005' ); ?></p>
 						<div id="bws_shortcode_block"><div id="bws_shortcode_display"></div></div>
 					</div>
 				</div>
@@ -944,23 +944,23 @@ if ( ! function_exists( 'bws_add_help_box' ) ) {
 /* add help tab  */
 if ( ! function_exists( 'bws_help_tab' ) ) {
 	function bws_help_tab( $screen, $args ) {
-		$url = ( ! empty( $args['section'] ) ) ? 'https://support.bestwebsoft.com/hc/en-us/sections/' . $args['section'] : 'https://support.bestwebsoft.com/';
+		$url = ( ! empty( $args['section'] ) ) ? 'https://support.ballerburg9005.com/hc/en-us/sections/' . $args['section'] : 'https://support.ballerburg9005.com/';
 
-		$content = '<p><a href="' . esc_url( $url ) . '" target="_blank">' . __( 'Visit Help Center', 'bestwebsoft' ) . '</a></p>';
+		$content = '<p><a href="' . esc_url( $url ) . '" target="_blank">' . __( 'Visit Help Center', 'ballerburg9005' ) . '</a></p>';
 
 		$screen->add_help_tab(
 			array(
 				'id'      => $args['id'] . '_help_tab',
-				'title'   => __( 'FAQ', 'bestwebsoft' ),
+				'title'   => __( 'FAQ', 'ballerburg9005' ),
 				'content' => $content
 			)
 		);
 
 		$screen->set_help_sidebar(
-			'<p><strong>' . __( 'For more information:', 'bestwebsoft' ) . '</strong></p>' .
-			'<p><a href="https://drive.google.com/folderview?id=0B5l8lO-CaKt9VGh0a09vUjNFNjA&usp=sharing#list" target="_blank">' . __( 'Documentation', 'bestwebsoft' ) . '</a></p>' .
-			'<p><a href="https://www.youtube.com/user/bestwebsoft/playlists?flow=grid&sort=da&view=1" target="_blank">' . __( 'Video Instructions', 'bestwebsoft' ) . '</a></p>' .
-			'<p><a href="https://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">' . __( 'Submit a Request', 'bestwebsoft' ) . '</a></p>'
+			'<p><strong>' . __( 'For more information:', 'ballerburg9005' ) . '</strong></p>' .
+			'<p><a href="https://drive.google.com/folderview?id=0B5l8lO-CaKt9VGh0a09vUjNFNjA&usp=sharing#list" target="_blank">' . __( 'Documentation', 'ballerburg9005' ) . '</a></p>' .
+			'<p><a href="https://www.youtube.com/user/ballerburg9005/playlists?flow=grid&sort=da&view=1" target="_blank">' . __( 'Video Instructions', 'ballerburg9005' ) . '</a></p>' .
+			'<p><a href="https://support.ballerburg9005.com/hc/en-us/requests/new" target="_blank">' . __( 'Submit a Request', 'ballerburg9005' ) . '</a></p>'
 		);
 	}
 }

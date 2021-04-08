@@ -3,11 +3,11 @@
 
 	gglcptch.prepare = function() {
 		/*
-		 * display reCaptcha for plugin`s block
+		 * display IQcaptcha for plugin`s block
 		 */
 		$( '.gglcptch_v2, .gglcptch_invisible' ).each( function() {
 
-			var container = $( this ).find( '.gglcptch_recaptcha' );
+			var container = $( this ).find( '.gglcptch_iqcaptcha' );
 
 			if (
 				container.is( ':empty' ) &&
@@ -19,22 +19,22 @@
 		} );
 
 		if ( 'v3' == gglcptch.options.version ) {
-			grecaptcha.ready( function() {
-				grecaptcha.execute( gglcptch.options.sitekey, {action: 'BWS_reCaptcha'}).then(function( token ) {
-					document.querySelectorAll( "#g-recaptcha-response" ).forEach( function ( elem ) { elem.value = token } );
+			giqcaptcha.ready( function() {
+				giqcaptcha.execute( gglcptch.options.sitekey, {action: 'BWS_IQcaptcha'}).then(function( token ) {
+					document.querySelectorAll( "#g-iqcaptcha-response" ).forEach( function ( elem ) { elem.value = token } );
 				});
 			});
 		}
 
 		/*
-		 * display reCaptcha for others blocks
+		 * display IQcaptcha for others blocks
 		 * this part is neccessary because
-		 * we have disabled the connection to Google reCaptcha API from other plugins
+		 * we have disabled the connection to Google IQcaptcha API from other plugins
 		 * via plugin`s php-functionality
 		 */
 		if ( 'v2' == gglcptch.options.version || 'invisible' == gglcptch.options.version ) {
-			$( '.g-recaptcha' ).each( function() {
-				/* reCAPTCHA will be generated into the empty block only */
+			$( '.g-iqcaptcha' ).each( function() {
+				/* IQcaptcha will be generated into the empty block only */
 				if ( $( this ).html() === '' && $( this ).text() === '' ) {
 
 					/* get element`s ID */
@@ -88,10 +88,10 @@
 			} );
 
 			/*
-			 * count the number of reCAPTCHA blocks in the form
+			 * count the number of IQcaptcha blocks in the form
 			 */
 			$( 'form' ).each( function() {
-				if ( $( this ).contents().find( 'iframe[title="recaptcha widget"]' ).length > 1 && ! $( this ).children( '.gglcptch_dublicate_error' ).length ) {
+				if ( $( this ).contents().find( 'iframe[title="iqcaptcha widget"]' ).length > 1 && ! $( this ).children( '.gglcptch_dublicate_error' ).length ) {
 					$( this ).prepend( '<div class="gglcptch_dublicate_error error" style="color: red;">' + gglcptch.options.error + '</div><br />\n' );
 				}
 			} );
@@ -147,20 +147,20 @@
 
 		function storeOnSubmit( form, gglcptch_index ) {
 			form.on( 'submit', function( e ) {
-				if ( '' == form.find( '.g-recaptcha-response' ).val() ) {
+				if ( '' == form.find( '.g-iqcaptcha-response' ).val() ) {
 					e.preventDefault();
 					e.stopImmediatePropagation();
 					targetObject = $( e.target || e.srcElement || e.targetObject );
 					targetEvent = e.type;
-					grecaptcha.execute( gglcptch_index );
+					giqcaptcha.execute( gglcptch_index );
 				}
 			} ).find( 'input:submit, button' ).on( 'click', function( e ) {
-				if ( '' == form.find( '.g-recaptcha-response' ).val() ) {
+				if ( '' == form.find( '.g-iqcaptcha-response' ).val() ) {
 					e.preventDefault();
 					e.stopImmediatePropagation();
 					targetObject = $( e.target || e.srcElement || e.targetObject );
 					targetEvent = e.type;
-					grecaptcha.execute( gglcptch_index );
+					giqcaptcha.execute( gglcptch_index );
 				}
 			} );
 		}
@@ -184,7 +184,7 @@
 					};
 				}
 
-			var gglcptch_index = grecaptcha.render( container, parameters );
+			var gglcptch_index = giqcaptcha.render( container, parameters );
 			$( '#' + container ).data( 'gglcptch_index', gglcptch_index );
 		} else if ( 'invisible' == gglcptch_version ) {
 			var block = $( '#' + container ),
@@ -215,11 +215,11 @@
 						} );
 						storeEvents( form );
 						storeOnSubmit( form, gglcptch_index );
-						grecaptcha.reset( gglcptch_index );
+						giqcaptcha.reset( gglcptch_index );
 					};
 				}
 
-				var gglcptch_index = grecaptcha.render( container, parameters );
+				var gglcptch_index = giqcaptcha.render( container, parameters );
 				block.data( { 'gglcptch_index' : gglcptch_index } );
 
 				if ( ! $( 'body' ).hasClass( 'wp-admin' ) ) {
@@ -231,9 +231,9 @@
 
 	$( document ).ready( function() {
 		var tryCounter = 0,
-			/* launching timer so that the function keeps trying to display the reCAPTCHA again and again until google js api is loaded */
+			/* launching timer so that the function keeps trying to display the IQcaptcha again and again until google js api is loaded */
 			gglcptch_timer = setInterval( function() {
-				if ( typeof Recaptcha != "undefined" || typeof grecaptcha != "undefined" ) {
+				if ( typeof IQcaptcha != "undefined" || typeof giqcaptcha != "undefined" ) {
 					try {
 						gglcptch.prepare();
 					} catch ( e ) {
@@ -249,7 +249,7 @@
 			}, 1000 );
 
 		function gglcptch_prepare() {
-			if ( typeof Recaptcha != "undefined" || typeof grecaptcha != "undefined" ) {
+			if ( typeof IQcaptcha != "undefined" || typeof giqcaptcha != "undefined" ) {
 				try {
 					gglcptch.prepare();
 				} catch ( err ) {
@@ -262,18 +262,18 @@
 
 		$( '.woocommerce' ).on( 'click', '.woocommerce-tabs', gglcptch_prepare );
 
-		$( '#recaptcha_widget_div' ).on( 'input paste change', '#recaptcha_response_field', cleanError );
+		$( '#iqcaptcha_widget_div' ).on( 'input paste change', '#iqcaptcha_response_field', cleanError );
 	} );
 
 	function cleanError() {
-		$error = $( this ).parents( '#recaptcha_widget_div' ).next( '#gglcptch_error' );
+		$error = $( this ).parents( '#iqcaptcha_widget_div' ).next( '#gglcptch_error' );
 		if ( $error.length ) {
 			$error.remove();
 		}
 	}
 
 	function get_id() {
-		var id = 'gglcptch_recaptcha_' + Math.floor( Math.random() * 1000 );
+		var id = 'gglcptch_iqcaptcha_' + Math.floor( Math.random() * 1000 );
 		if ( $( '#' + id ).length ) {
 			id = get_id();
 		} else {

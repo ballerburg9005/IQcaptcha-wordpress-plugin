@@ -103,7 +103,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 				$this->options['keys_verified'] = false;
 			}
 
-			if ( $_POST['gglcptch_recaptcha_version'] != $this->options['recaptcha_version'] ) {
+			if ( $_POST['gglcptch_iqcaptcha_version'] != $this->options['iqcaptcha_version'] ) {
 				$this->options['keys_verified'] = false;
 				$this->options['need_keys_verified_check'] = true;
 			}
@@ -111,7 +111,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			$this->options['allowlist_message']	    = stripslashes( sanitize_text_field( $_POST['gglcptch_allowlist_message'] ) );
 			$this->options['public_key']			= stripslashes( sanitize_text_field( $_POST['gglcptch_public_key'] ) );
 			$this->options['private_key']		    = stripslashes( sanitize_text_field( $_POST['gglcptch_private_key'] ) );
-			$this->options['recaptcha_version']	    = in_array( $_POST['gglcptch_recaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_recaptcha_version'] : $this->options['recaptcha_version'];
+			$this->options['iqcaptcha_version']	    = in_array( $_POST['gglcptch_iqcaptcha_version'], array( 'v2', 'invisible', 'v3' ) ) ? $_POST['gglcptch_iqcaptcha_version'] : $this->options['iqcaptcha_version'];
 			$this->options['theme_v2']			    = in_array( $_POST['gglcptch_theme_v2'], array( 'light', 'dark' ) ) ? $_POST['gglcptch_theme_v2'] : $this->options['theme_v2'];
             $this->options['score_v3']              = isset( $_POST['gglcptch_score_v3'] ) ? (float)$_POST['gglcptch_score_v3'] : 0.5;
 			$this->options['disable_submit']	    = isset( $_POST['gglcptch_disable_submit'] ) ? 1 : 0;
@@ -143,18 +143,18 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 * @return void
 		 */
 		public function tab_settings() { ?>
-			<h3 class="bws_tab_label"><?php _e( 'reCaptcha Settings', 'google-captcha' ); ?></h3>
+			<h3 class="bws_tab_label"><?php _e( 'IQcaptcha Settings', 'google-captcha' ); ?></h3>
 			<?php $this->help_phrase(); ?>
 			<hr>
 			<div class="bws_tab_sub_label"><?php _e( 'General', 'google-captcha' ); ?></div>
 			<table class="form-table">
                 <tr valign="top">
-                    <th scope="row"><?php _e( 'reCaptcha Version', 'google-captcha' ); ?></th>
+                    <th scope="row"><?php _e( 'IQcaptcha Version', 'google-captcha' ); ?></th>
                     <td>
                         <fieldset>
                             <?php foreach ( $this->versions as $version => $version_name ) { ?>
                                 <label>
-                                    <input type="radio" name="gglcptch_recaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['recaptcha_version'] ); ?>> <?php echo $version_name; ?>
+                                    <input type="radio" name="gglcptch_iqcaptcha_version" value="<?php echo $version; ?>" <?php checked( $version, $this->options['iqcaptcha_version'] ); ?>> <?php echo $version_name; ?>
                                 </label>
                                 <br/>
                             <?php } ?>
@@ -163,12 +163,12 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
                 </tr>
             </table>
             <table class="form-table gglcptch_settings_form">
-                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'Register your domain name with Google reCaptcha service and add the keys to the fields below. %s Get the API Keys. %s' , 'google-captcha' ), 
-                	'<a target="_blank" href="https://www.google.com/recaptcha/admin#list">', 
+                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'Register your domain name with Google IQcaptcha service and add the keys to the fields below. %s Get the API Keys. %s' , 'google-captcha' ), 
+                	'<a target="_blank" href="https://www.google.com/iqcaptcha/admin#list">', 
                 	'</a>' ) ?>
                 </div>
-                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'If you do not want to create API keys use %s Captcha by BestWebSoft %s plugin.', 'google-captcha' ), 
-                	'<a target="_blank" href="https://bestwebsoft.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">', 
+                <div class="bws_info gglcptch_settings_form"><?php printf( __( 'If you do not want to create API keys use %s Captcha by ballerburg9005 %s plugin.', 'google-captcha' ), 
+                	'<a target="_blank" href="https://ballerburg9005.com/products/wordpress/plugins/captcha/?k=dcf21edcd5cc9374f5e15c8055e40797">', 
                 	'</a>' ); ?>
                 </div>
 				<?php foreach ( $this->keys as $key => $fields ) { ?>
@@ -185,13 +185,13 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 						<th></th>
 						<td>
 							<div id="gglcptch-test-keys">
-								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test reCaptcha' , 'google-captcha' ); ?></a>
+								<a class="button button-secondary" href="<?php echo add_query_arg( array( '_wpnonce' => wp_create_nonce( 'gglcptch-test-keys' ), 'action' => 'gglcptch-test-keys', 'is_network' => $this->is_network_options ? '1' : '0' ), admin_url( 'admin-ajax.php' ) ); ?>"><?php _e( 'Test IQcaptcha' , 'google-captcha' ); ?></a>
 							</div>
 						</td>
 					</tr>
 				<?php } ?>				
                 <tr valign="top">
-					<th scope="row"><?php _e( 'Enable reCaptcha for', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'Enable IQcaptcha for', 'google-captcha' ); ?></th>
 					<td>
 						<!--[if !IE]> -->
 							<div class="gglcptch-settings-accordion">
@@ -249,12 +249,12 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<table class="form-table">
 				<tr valign="top">
                     <th scope="row">
-						<?php _e( 'reCaptcha Domain', 'google-captcha' ); ?>
+						<?php _e( 'IQcaptcha Domain', 'google-captcha' ); ?>
                     </th>
                     <td>
                     	<select <?php echo $this->change_permission_attr; ?> name="gglcptch_use_globally">
                         	<option value="0" <?php selected( $this->options['use_globally'], 0 ); ?>>google.com</option>
-                        	<option value="1" <?php selected( $this->options['use_globally'], 1 ); ?>>recaptcha.net</option>
+                        	<option value="1" <?php selected( $this->options['use_globally'], 1 ); ?>>iqcaptcha.net</option>
                         </select>
                         <div class="bws_info">
 							<?php _e( 'If Google is not accessible or blocked in your country select other one.', 'google-captcha' ); ?>
@@ -304,12 +304,12 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 			<table class="form-table">
 				<tr class="gglcptch_badge_v3" valign="top">
                     <th scope="row">
-						<?php _e( 'Hide reCaptcha Badge', 'google-captcha' ); ?>
+						<?php _e( 'Hide IQcaptcha Badge', 'google-captcha' ); ?>
                     </th>
                     <td>
                         <input<?php echo $this->change_permission_attr; ?> id="gglcptch_hide_badge" type="checkbox" <?php checked( ! empty( $this->options['hide_badge'] ) ); ?> name="gglcptch_hide_badge" value="1" />&nbsp;
                         <span class="bws_info">
-							<?php _e( 'Enable to hide reCaptcha Badge for Version 3 and Invisible reCaptcha.', 'google-captcha' ); ?>
+							<?php _e( 'Enable to hide IQcaptcha Badge for Version 3 and Invisible IQcaptcha.', 'google-captcha' ); ?>
 						</span>
                     </td>
                 </tr>
@@ -328,7 +328,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
                     </td>
                 </tr>		
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Hide reCaptcha for', 'google-captcha' ); ?></th>
+					<th scope="row"><?php _e( 'Hide IQcaptcha for', 'google-captcha' ); ?></th>
 					<td>
 						<fieldset>
 							<?php if ( function_exists( 'get_editable_roles' ) ) {
@@ -349,7 +349,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<th scope="row"><?php _e( 'Allow List Notification', 'google-captcha' ); ?></th>
 					<td>
 						<textarea name="gglcptch_allowlist_message"><?php echo $this->options['allowlist_message']; ?></textarea>
-						<div class="bws_info"><?php _e( 'This message will be displayed instead of the reCaptcha.', 'google-captcha' ); ?></div>
+						<div class="bws_info"><?php _e( 'This message will be displayed instead of the IQcaptcha.', 'google-captcha' ); ?></div>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -357,7 +357,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 					<td>
 						<input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit" type="checkbox" <?php checked( ! empty( $this->options["disable_submit"] ) ); ?> name="gglcptch_disable_submit" value="1" />
 						<span class="bws_info">
-							<?php _e( 'Enable to keep submit button disabled until reCaptcha is loaded (do not use this option if you see "Failed to load Google reCaptcha" message).', 'google-captcha' ); ?>
+							<?php _e( 'Enable to keep submit button disabled until IQcaptcha is loaded (do not use this option if you see "Failed to load Google IQcaptcha" message).', 'google-captcha' ); ?>
 						</span>
 					</td>
 				</tr>
@@ -368,7 +368,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
                     <td>
                         <input<?php echo $this->change_permission_attr; ?> id="gglcptch_disable_submit_button" type="checkbox" <?php checked( ! empty( $this->options['disable_submit_button'] ) ); ?> name="gglcptch_disable_submit_button" value="1" />
                         <span class="bws_info">
-							<?php _e( 'Enable to keep submit button disabled until user passes the reCaptcha test (for Version 2).', 'google-captcha' ); ?>
+							<?php _e( 'Enable to keep submit button disabled until user passes the IQcaptcha test (for Version 2).', 'google-captcha' ); ?>
 						</span>
                     </td>
                 </tr>
@@ -382,7 +382,7 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		 */
 		public function display_custom_messages() {
 			if ( ! empty( $this->options['need_keys_verified_check'] ) ) { ?>
-				<div class="updated inline bws-notice"><p><strong><?php _e( 'reCaptcha version was changed. Please submit "Test reCaptcha" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
+				<div class="updated inline bws-notice"><p><strong><?php _e( 'IQcaptcha version was changed. Please submit "Test IQcaptcha" and regenerate Site and Secret keys if necessary.', 'google-captcha' ); ?></strong></p></div>
 			<?php }
 		}
 
@@ -399,10 +399,10 @@ if ( ! class_exists( 'Gglcptch_Settings_Tabs' ) ) {
 		public function display_metabox() { ?>
 			<div class="postbox">
 				<h3 class="hndle">
-					<?php _e( 'reCaptcha Shortcode', 'google-captcha' ); ?>
+					<?php _e( 'IQcaptcha Shortcode', 'google-captcha' ); ?>
 				</h3>
 				<div class="inside">
-					<?php _e( "Add reCaptcha to your posts or pages using the following shortcode:", 'google-captcha' ); ?>
+					<?php _e( "Add IQcaptcha to your posts or pages using the following shortcode:", 'google-captcha' ); ?>
 					<?php bws_shortcode_output( '[bws_google_captcha]' ); ?>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Displays the content of the dialog box when the user clicks on the "Deactivate" link on the plugin settings page
- * @package BestWebSoft
+ * @package ballerburg9005
  * @since 2.1.3
  */
 if ( ! defined( 'ABSPATH' ) )
@@ -19,69 +19,69 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 		if ( empty( $bstwbsftwppdtplgns_active_plugins ) )
 			return;		
 
-		$contact_support_template = __( 'Need help? We are ready to answer your questions.', 'bestwebsoft' ) . ' <a href="https://support.bestwebsoft.com/hc/en-us/requests/new" target="_blank">' . __( 'Contact Support', 'bestwebsoft' ) . '</a>';
+		$contact_support_template = __( 'Need help? We are ready to answer your questions.', 'ballerburg9005' ) . ' <a href="https://support.ballerburg9005.com/hc/en-us/requests/new" target="_blank">' . __( 'Contact Support', 'ballerburg9005' ) . '</a>';
 
 		$reasons = array(
 			array(
 				'id'                => 'NOT_WORKING',
-				'text'              => __( 'The plugin is not working', 'bestwebsoft' ),
+				'text'              => __( 'The plugin is not working', 'ballerburg9005' ),
 				'input_type'        => 'textarea',
-				'input_placeholder' => esc_attr__( "Kindly share what didn't work so we can fix it in future updates...", 'bestwebsoft' )
+				'input_placeholder' => esc_attr__( "Kindly share what didn't work so we can fix it in future updates...", 'ballerburg9005' )
 			),
 			array(
 				'id'                => 'DIDNT_WORK_AS_EXPECTED',
-				'text'              => __( "The plugin didn't work as expected", 'bestwebsoft' ),
+				'text'              => __( "The plugin didn't work as expected", 'ballerburg9005' ),
 				'input_type'        => 'textarea',
-				'input_placeholder' => esc_attr__( 'What did you expect?', 'bestwebsoft' )
+				'input_placeholder' => esc_attr__( 'What did you expect?', 'ballerburg9005' )
 			),
 			array(
 				'id'                => 'SUDDENLY_STOPPED_WORKING',
-				'text'              => __( 'The plugin suddenly stopped working', 'bestwebsoft' ),
+				'text'              => __( 'The plugin suddenly stopped working', 'ballerburg9005' ),
 				'input_type'        => '',
 				'input_placeholder' => '',
 				'internal_message'  => $contact_support_template
 			),
 			array(
 				'id'                => 'BROKE_MY_SITE',
-				'text'              => __( 'The plugin broke my site', 'bestwebsoft' ),
+				'text'              => __( 'The plugin broke my site', 'ballerburg9005' ),
 				'input_type'        => '',
 				'input_placeholder' => '',
 				'internal_message'  => $contact_support_template
 			),
 			array(
 				'id'                => 'COULDNT_MAKE_IT_WORK',
-				'text'              => __( "I couldn't understand how to get it work", 'bestwebsoft' ),
+				'text'              => __( "I couldn't understand how to get it work", 'ballerburg9005' ),
 				'input_type'        => '',
 				'input_placeholder' => '',
 				'internal_message'  => $contact_support_template
 			),
 			array(
 				'id'                => 'FOUND_A_BETTER_PLUGIN',
-				'text'              => __( 'I found a better plugin', 'bestwebsoft' ),
+				'text'              => __( 'I found a better plugin', 'ballerburg9005' ),
 				'input_type'        => 'textfield',
-				'input_placeholder' => esc_attr__( "What's the plugin name?", 'bestwebsoft' )
+				'input_placeholder' => esc_attr__( "What's the plugin name?", 'ballerburg9005' )
 			),
 			array(
 				'id'                => 'GREAT_BUT_NEED_SPECIFIC_FEATURE',
-				'text'              => __( "The plugin is great, but I need specific feature that you don't support", 'bestwebsoft' ),
+				'text'              => __( "The plugin is great, but I need specific feature that you don't support", 'ballerburg9005' ),
 				'input_type'        => 'textarea',
-				'input_placeholder' => esc_attr__( 'What feature?', 'bestwebsoft' )
+				'input_placeholder' => esc_attr__( 'What feature?', 'ballerburg9005' )
 			),
 			array(
 				'id'                => 'NO_LONGER_NEEDED',
-				'text'              => __( 'I no longer need the plugin', 'bestwebsoft' ),
+				'text'              => __( 'I no longer need the plugin', 'ballerburg9005' ),
 				'input_type'        => '',
 				'input_placeholder' => ''
 			),
 			array(
 				'id'                => 'TEMPORARY_DEACTIVATION',
-				'text'              => __( "It's a temporary deactivation, I'm just debugging an issue", 'bestwebsoft' ),
+				'text'              => __( "It's a temporary deactivation, I'm just debugging an issue", 'ballerburg9005' ),
 				'input_type'        => '',
 				'input_placeholder' => ''
 			),
 			array(
 				'id'                => 'OTHER',
-				'text'              => __( 'Other', 'bestwebsoft' ),
+				'text'              => __( 'Other', 'ballerburg9005' ),
 				'input_type'        => 'textfield',
 				'input_placeholder' => ''
 			)				
@@ -90,9 +90,9 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 		$modal_html = '<div class="bws-modal bws-modal-deactivation-feedback">
 	    	<div class="bws-modal-dialog">
 	    		<div class="bws-modal-body">
-	    			<h2>' . __( 'Quick Feedback', 'bestwebsoft' ) . '</h2>
+	    			<h2>' . __( 'Quick Feedback', 'ballerburg9005' ) . '</h2>
 	    			<div class="bws-modal-panel active">
-	    				<p>' . __( 'If you have a moment, please let us know why you are deactivating', 'bestwebsoft' ) . ":</p><ul>";
+	    				<p>' . __( 'If you have a moment, please let us know why you are deactivating', 'ballerburg9005' ) . ":</p><ul>";
 
 		foreach ( $reasons as $reason ) {
 			$list_item_classes = 'bws-modal-reason' . ( ! empty( $reason['input_type'] ) ? ' has-input' : '' );
@@ -117,14 +117,14 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 		$modal_html .= '</ul>
 		    				<label class="bws-modal-anonymous-label">
 			    				<input type="checkbox" />' .
-								__( 'Send website data and allow to contact me back', 'bestwebsoft' ) .
+								__( 'Send website data and allow to contact me back', 'ballerburg9005' ) .
 							'</label>
 						</div>
 					</div>
 					<div class="bws-modal-footer">
-						<a href="#" class="button button-primary bws-modal-button-deactivate disabled">' . __( 'Submit and Deactivate', 'bestwebsoft' ) . '</a>
-						<a href="#" class="bws-modal-skip-link">' . __( 'Skip and Deactivate', 'bestwebsoft' ) . '</a>
-						<span class="bws-modal-processing hidden">' . __( 'Processing', 'bestwebsoft' ) . '...</span>
+						<a href="#" class="button button-primary bws-modal-button-deactivate disabled">' . __( 'Submit and Deactivate', 'ballerburg9005' ) . '</a>
+						<a href="#" class="bws-modal-skip-link">' . __( 'Skip and Deactivate', 'ballerburg9005' ) . '</a>
+						<span class="bws-modal-processing hidden">' . __( 'Processing', 'ballerburg9005' ) . '...</span>
 						<div class="clear"></div>
 					</div>
 				</div>
@@ -269,7 +269,7 @@ if ( ! function_exists( 'bws_add_deactivation_feedback_dialog_box' ) ) {
 								_parent.find( 'input, textarea' ).attr( 'placeholder', _parent.data( 'input-placeholder' ) ).focus();
 
 								if ( BwsModalIsReasonSelected( 'OTHER' ) ) {
-									\$modal.find( '.message' ).text( '" . __( 'Please tell us the reason so we can improve it.', 'bestwebsoft' ) . "' ).show();
+									\$modal.find( '.message' ).text( '" . __( 'Please tell us the reason so we can improve it.', 'ballerburg9005' ) . "' ).show();
 								}
 							}
 						});
@@ -390,7 +390,7 @@ if ( ! function_exists( 'bws_submit_uninstall_reason_action' ) ) {
 		}
 
 		/* send data */
-		$raw_response = wp_remote_post( 'https://bestwebsoft.com/wp-content/plugins/products-statistics/deactivation-feedback/', array(
+		$raw_response = wp_remote_post( 'https://ballerburg9005.com/wp-content/plugins/products-statistics/deactivation-feedback/', array(
 			'method'  => 'POST',
 			'body'    => $options,
 			'timeout' => 15,

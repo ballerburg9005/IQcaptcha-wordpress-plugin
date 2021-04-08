@@ -67,7 +67,7 @@ if ( ! function_exists( 'gglcptch_get_sections' ) ) {
 	}
 }
 
-/* Add reCaptcha forms to the Limit Attempts plugin */
+/* Add IQcaptcha forms to the Limit Attempts plugin */
 if ( ! function_exists( 'gglcptch_add_lmtttmpts_forms' ) ) {
 	function gglcptch_add_lmtttmpts_forms( $forms = array() ) {
 		if ( ! is_array( $forms ) ) {
@@ -75,16 +75,16 @@ if ( ! function_exists( 'gglcptch_add_lmtttmpts_forms' ) ) {
 		}
 
 		$forms["gglcptch"] = array(
-			'name'		=> __( 'reCaptcha Plugin', 'google-captcha' ),
+			'name'		=> __( 'IQcaptcha Plugin', 'google-captcha' ),
 			'forms'		=> array(),
 		);
 
-		$recaptcha_forms = gglcptch_get_forms();
+		$iqcaptcha_forms = gglcptch_get_forms();
 
-		foreach ( $recaptcha_forms as $form_slug => $form_data ) {
-			$forms["gglcptch"]["forms"]["{$form_slug}_recaptcha_check"] = $form_data;
+		foreach ( $iqcaptcha_forms as $form_slug => $form_data ) {
+			$forms["gglcptch"]["forms"]["{$form_slug}_iqcaptcha_check"] = $form_data;
 			if ( empty( $form_data['form_notice'] ) ) {
-				$forms["gglcptch"]["forms"]["{$form_slug}_recaptcha_check"]['form_notice'] = gglcptch_get_section_notice( $form_slug );
+				$forms["gglcptch"]["forms"]["{$form_slug}_iqcaptcha_check"]['form_notice'] = gglcptch_get_section_notice( $form_slug );
 			}
 		}
 
@@ -141,7 +141,7 @@ if ( ! function_exists( 'gglcptch_get_form_notice' ) ) {
 				$form_notice = '<a href="' . self_admin_url( 'plugins.php' ) . '">' . __( 'Activate', 'google-captcha' ) . '</a>';
 			} elseif ( 'not_installed' == $plugin_info['status'] ) {
 				if ( 'contact_form' == $form_slug ) {
-					$form_notice = '<a href="https://bestwebsoft.com/products/wordpress/plugins/contact-form/?k=fa26df3911ebcd90c3e85117d6dd0ce0&pn=281&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Install Now', 'google-captcha' ) . '</a>';
+					$form_notice = '<a href="https://ballerburg9005.com/products/wordpress/plugins/contact-form/?k=fa26df3911ebcd90c3e85117d6dd0ce0&pn=281&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version . '" target="_blank">' . __( 'Install Now', 'google-captcha' ) . '</a>';
 				} else {
 					$slug = explode( '/', $plugins[ $form_slug ] );
 					$slug = $slug[0];
@@ -161,12 +161,12 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 
 		if ( ! empty( $gglcptch_options['login_form'] ) || ! empty( $gglcptch_options['reset_pwd_form'] ) || ! empty( $gglcptch_options['registration_form'] ) ) {
 
-			if ( gglcptch_is_recaptcha_required( 'login_form', $is_user_logged_in ) ) {
+			if ( gglcptch_is_iqcaptcha_required( 'login_form', $is_user_logged_in ) ) {
 				add_action( 'login_form', 'gglcptch_login_display' );
 				add_action( 'authenticate', 'gglcptch_login_check', 21, 1 );
 			}
 
-			if ( gglcptch_is_recaptcha_required( 'registration_form', $is_user_logged_in ) ) {
+			if ( gglcptch_is_iqcaptcha_required( 'registration_form', $is_user_logged_in ) ) {
 				if ( ! is_multisite() ) {
 					add_action( 'register_form', 'gglcptch_login_display', 99 );
 					add_action( 'registration_errors', 'gglcptch_register_check', 10, 1 );
@@ -177,28 +177,28 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 				}
 			}
 
-			if ( gglcptch_is_recaptcha_required( 'reset_pwd_form', $is_user_logged_in ) ) {
+			if ( gglcptch_is_iqcaptcha_required( 'reset_pwd_form', $is_user_logged_in ) ) {
 				add_action( 'lostpassword_form', 'gglcptch_login_display' );
 				add_action( 'allow_password_reset', 'gglcptch_lostpassword_check' );
 			}
 		}
 
 		/* Add Google Captcha to WP comments */
-		if ( gglcptch_is_recaptcha_required( 'comments_form', $is_user_logged_in ) ) {
+		if ( gglcptch_is_iqcaptcha_required( 'comments_form', $is_user_logged_in ) ) {
 			add_action( 'comment_form_after_fields', 'gglcptch_commentform_display' );
 			add_action( 'comment_form_logged_in_after', 'gglcptch_commentform_display' );
 			add_action( 'pre_comment_on_post', 'gglcptch_commentform_check' );
 		}
 
-		/* Add Google Captcha to Contact Form by BestWebSoft */
-		if ( gglcptch_is_recaptcha_required( 'contact_form', $is_user_logged_in ) ) {
+		/* Add Google Captcha to Contact Form by ballerburg9005 */
+		if ( gglcptch_is_iqcaptcha_required( 'contact_form', $is_user_logged_in ) ) {
 			add_filter( 'cntctfrm_display_captcha', 'gglcptch_display', 10, 1 );
 			add_filter( 'cntctfrm_check_form', 'gglcptch_contact_form_check' );
 		}
 
-		/* Add Google Captcha to Testimonials by BestWebSoft */
-		if ( gglcptch_is_recaptcha_required( 'testimonials', $is_user_logged_in ) ) {
-			add_filter( 'tstmnls_display_recaptcha', 'gglcptch_display', 10, 0 );
+		/* Add Google Captcha to Testimonials by ballerburg9005 */
+		if ( gglcptch_is_iqcaptcha_required( 'testimonials', $is_user_logged_in ) ) {
+			add_filter( 'tstmnls_display_iqcaptcha', 'gglcptch_display', 10, 0 );
 		}
 
 		do_action( 'gglcptch_add_plus_actions', $is_user_logged_in );
@@ -206,8 +206,8 @@ if ( ! function_exists( 'gglcptch_add_actions' ) ) {
 }
 
 /* Echo google captcha */
-if ( ! function_exists( 'gglcptch_echo_recaptcha' ) ) {
-	function gglcptch_echo_recaptcha( $content = '' ) {
+if ( ! function_exists( 'gglcptch_echo_iqcaptcha' ) ) {
+	function gglcptch_echo_iqcaptcha( $content = '' ) {
 		echo gglcptch_display( $content );
 	}
 }
@@ -218,8 +218,8 @@ if ( ! function_exists( 'gglcptch_login_display' ) ) {
 
 		global $gglcptch_options;
 
-		if ( isset( $gglcptch_options['recaptcha_version'] ) ) {
-			if ( 'v2' == $gglcptch_options['recaptcha_version'] ) {
+		if ( isset( $gglcptch_options['iqcaptcha_version'] ) ) {
+			if ( 'v2' == $gglcptch_options['iqcaptcha_version'] ) {
 				$from_width = 302; ?>
 				<style type="text/css" media="screen">
 					.login-action-login #loginform,
@@ -290,7 +290,7 @@ if ( ! function_exists( 'gglcptch_register_check' ) ) {
 		if ( ! $gglcptch_check['response'] ) {
 			return $gglcptch_check['errors'];
 		}
-		$_POST['g-recaptcha-response-check'] = true;
+		$_POST['g-iqcaptcha-response-check'] = true;
 		return $allow;
 	}
 }
@@ -298,7 +298,7 @@ if ( ! function_exists( 'gglcptch_register_check' ) ) {
 /* Check google captcha in lostpassword form */
 if ( ! function_exists( 'gglcptch_lostpassword_check' ) ) {
 	function gglcptch_lostpassword_check( $allow ) {
-		if ( gglcptch_is_woocommerce_page() || ( isset( $_POST['g-recaptcha-response-check'] ) && true === $_POST['g-recaptcha-response-check'] ) )
+		if ( gglcptch_is_woocommerce_page() || ( isset( $_POST['g-iqcaptcha-response-check'] ) && true === $_POST['g-iqcaptcha-response-check'] ) )
 			return $allow;
 		$gglcptch_check = gglcptch_check( 'reset_pwd_form' );
 		if ( ! $gglcptch_check['response'] ) {

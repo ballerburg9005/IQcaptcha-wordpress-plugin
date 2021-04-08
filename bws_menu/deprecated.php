@@ -1,6 +1,6 @@
 <?php
 /*
-* Deprecated functions for BestWebSoft plugins
+* Deprecated functions for ballerburg9005 plugins
 */
 
 /**
@@ -23,9 +23,9 @@ if ( ! function_exists ( 'bws_general_menu' ) ) {
 
 			add_menu_page( 'BWS Panel', 'BWS Panel', 'manage_options', 'bws_panel', 'bws_add_menu_render', 'none', '1001' );
 
-			add_submenu_page( 'bws_panel', __( 'Plugins', 'bestwebsoft' ), __( 'Plugins', 'bestwebsoft' ), 'manage_options', 'bws_panel', 'bws_add_menu_render' );
-			add_submenu_page( 'bws_panel', __( 'Themes', 'bestwebsoft' ), __( 'Themes', 'bestwebsoft' ), 'manage_options', 'bws_themes', 'bws_add_menu_render' );
-			add_submenu_page( 'bws_panel', __( 'System Status', 'bestwebsoft' ), __( 'System Status', 'bestwebsoft' ), 'manage_options', 'bws_system_status', 'bws_add_menu_render' );
+			add_submenu_page( 'bws_panel', __( 'Plugins', 'ballerburg9005' ), __( 'Plugins', 'ballerburg9005' ), 'manage_options', 'bws_panel', 'bws_add_menu_render' );
+			add_submenu_page( 'bws_panel', __( 'Themes', 'ballerburg9005' ), __( 'Themes', 'ballerburg9005' ), 'manage_options', 'bws_themes', 'bws_add_menu_render' );
+			add_submenu_page( 'bws_panel', __( 'System Status', 'ballerburg9005' ), __( 'System Status', 'ballerburg9005' ), 'manage_options', 'bws_system_status', 'bws_add_menu_render' );
 
 			$bws_general_menu_exist = true;
 		}
@@ -116,11 +116,11 @@ if ( ! function_exists ( 'bws_check_pro_license_form' ) ) {
 		$license_key = ( isset( $bstwbsftwppdtplgns_options[ $plugin_basename ] ) ) ? $bstwbsftwppdtplgns_options[ $plugin_basename ] : ''; ?>
 		<div class="clear"></div>
 		<form method="post" action="">
-			<p><?php echo _e( 'If necessary, you can check if the license key is correct or reenter it in the field below. You can find your license key on your personal page - Client Area - on our website', 'bestwebsoft' ) . ' <a href="https://bestwebsoft.com/client-area">https://bestwebsoft.com/client-area</a> ' . __( '(your username is the email address specified during the purchase). If necessary, please submit "Lost your password?" request.', 'bestwebsoft' ); ?></p>
+			<p><?php echo _e( 'If necessary, you can check if the license key is correct or reenter it in the field below. You can find your license key on your personal page - Client Area - on our website', 'ballerburg9005' ) . ' <a href="https://ballerburg9005.com/client-area">https://ballerburg9005.com/client-area</a> ' . __( '(your username is the email address specified during the purchase). If necessary, please submit "Lost your password?" request.', 'ballerburg9005' ); ?></p>
 			<p>
 				<input type="text" maxlength="100" name="bws_license_key" value="<?php echo esc_attr( $license_key ); ?>" />
 				<input type="hidden" name="bws_license_submit" value="submit" />
-				<input type="submit" class="button" value="<?php _e( 'Check license key', 'bestwebsoft' ) ?>" />
+				<input type="submit" class="button" value="<?php _e( 'Check license key', 'ballerburg9005' ) ?>" />
 				<?php wp_nonce_field( $plugin_basename, 'bws_license_nonce_name' ); ?>
 			</p>
 		</form>
@@ -139,12 +139,12 @@ if ( ! function_exists( 'bws_go_pro_from_trial_tab' ) ) {
 		if ( $trial_license_is_set ) { ?>
 			<form method="post" action="">
 				<p>
-					<?php printf( __( 'In order to continue using the plugin it is necessary to buy a %s license.', 'bestwebsoft' ), '<a href="https://bestwebsoft.com/products/wordpress/plugins/' . $link_slug . '/?k=' . $link_key . '&amp;pn=' . $link_pn . '&amp;v=' . $plugin_info["Version"] . '&amp;wp_v=' . $wp_version .'" target="_blank" title="' . $plugin_info["Name"] . '">Pro</a>' ); ?> <?php _e( 'After that, you can activate it by entering your license key.', 'bestwebsoft' ); ?>
+					<?php printf( __( 'In order to continue using the plugin it is necessary to buy a %s license.', 'ballerburg9005' ), '<a href="https://ballerburg9005.com/products/wordpress/plugins/' . $link_slug . '/?k=' . $link_key . '&amp;pn=' . $link_pn . '&amp;v=' . $plugin_info["Version"] . '&amp;wp_v=' . $wp_version .'" target="_blank" title="' . $plugin_info["Name"] . '">Pro</a>' ); ?> <?php _e( 'After that, you can activate it by entering your license key.', 'ballerburg9005' ); ?>
 					<br />
 					<span class="bws_info">
-						<?php _e( 'License key can be found in the', 'bestwebsoft' ); ?>
-						<a href="https://bestwebsoft.com/wp-login.php">Client Area</a>
-						<?php _e( '(your username is the email address specified during the purchase).', 'bestwebsoft' ); ?>
+						<?php _e( 'License key can be found in the', 'ballerburg9005' ); ?>
+						<a href="https://ballerburg9005.com/wp-login.php">Client Area</a>
+						<?php _e( '(your username is the email address specified during the purchase).', 'ballerburg9005' ); ?>
 					</span>
 				</p>
 				<?php if ( isset( $bstwbsftwppdtplgns_options['go_pro'][ $plugin_basename ]['count'] ) &&
@@ -152,24 +152,24 @@ if ( ! function_exists( 'bws_go_pro_from_trial_tab' ) ) {
 					$bstwbsftwppdtplgns_options['go_pro'][ $plugin_basename ]['time'] > ( time() - ( 24 * 60 * 60 ) ) ) { ?>
 					<p>
 						<input disabled="disabled" type="text" name="bws_license_key" value="" />
-						<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Activate', 'bestwebsoft' ); ?>" />
+						<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Activate', 'ballerburg9005' ); ?>" />
 					</p>
-					<p><?php _e( "Unfortunately, you have exceeded the number of available tries per day.", 'bestwebsoft' ); ?></p>
+					<p><?php _e( "Unfortunately, you have exceeded the number of available tries per day.", 'ballerburg9005' ); ?></p>
 				<?php } else { ?>
 					<p>
 						<input type="text" maxlength="100" name="bws_license_key" value="" />
 						<input type="hidden" name="bws_license_plugin" value="<?php echo esc_attr( $plugin_basename ); ?>" />
 						<input type="hidden" name="bws_license_submit" value="submit" />
-						<input type="submit" class="button-primary" value="<?php _e( 'Activate', 'bestwebsoft' ); ?>" />
+						<input type="submit" class="button-primary" value="<?php _e( 'Activate', 'ballerburg9005' ); ?>" />
 						<?php wp_nonce_field( $plugin_basename, 'bws_license_nonce_name' ); ?>
 					</p>
 				<?php } ?>
 			</form>
 		<?php } else { 
 			$page_url = esc_url( self_admin_url( 'admin.php?page=' . $page ) ); ?>
-			<p><?php _e( "Congratulations! The Pro license of the plugin is activated successfully.", 'bestwebsoft' ); ?></p>
+			<p><?php _e( "Congratulations! The Pro license of the plugin is activated successfully.", 'ballerburg9005' ); ?></p>
 			<p>
-				<?php _e( "Please, go to", 'bestwebsoft' ); ?> <a href="<?php echo $page_url; ?>"><?php _e( 'the setting page', 'bestwebsoft' ); ?></a>
+				<?php _e( "Please, go to", 'ballerburg9005' ); ?> <a href="<?php echo $page_url; ?>"><?php _e( 'the setting page', 'ballerburg9005' ); ?></a>
 			</p>
 		<?php }
 	}
@@ -184,9 +184,9 @@ if ( ! function_exists( 'bws_go_pro_from_trial_tab' ) ) {
 if ( ! function_exists ( 'bws_form_restore_default_settings' ) ) {
 	function bws_form_restore_default_settings( $plugin_basename, $change_permission_attr = '' ) { ?>
 		<form method="post" action="">
-			<p><?php _e( 'Restore all plugin settings to defaults', 'bestwebsoft' ); ?></p>
+			<p><?php _e( 'Restore all plugin settings to defaults', 'ballerburg9005' ); ?></p>
 			<p>
-				<input <?php echo $change_permission_attr; ?> type="submit" class="button" value="<?php _e( 'Restore settings', 'bestwebsoft' ); ?>" />
+				<input <?php echo $change_permission_attr; ?> type="submit" class="button" value="<?php _e( 'Restore settings', 'ballerburg9005' ); ?>" />
 			</p>
 			<input type="hidden" name="bws_restore_default" value="submit" />
 			<?php wp_nonce_field( $plugin_basename, 'bws_settings_nonce_name' ); ?>
@@ -205,48 +205,48 @@ if ( ! function_exists( 'bws_go_pro_tab_show' ) ) {
 		$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? sanitize_text_field( $_POST['bws_license_key'] ) : "";
 		if ( $pro_plugin_is_activated ) { 
 			$page_url = esc_url( self_admin_url( 'admin.php?page=' . $pro_page ) ); ?>
-			<p><?php _e( "Congratulations! Pro version of the plugin is  installed and activated successfully.", 'bestwebsoft' ); ?></p>
+			<p><?php _e( "Congratulations! Pro version of the plugin is  installed and activated successfully.", 'ballerburg9005' ); ?></p>
 			<p>
-				<?php _e( "Please, go to", 'bestwebsoft' ); ?> <a href="<?php echo $page_url; ?>"><?php _e( 'the setting page', 'bestwebsoft' ); ?></a>
+				<?php _e( "Please, go to", 'ballerburg9005' ); ?> <a href="<?php echo $page_url; ?>"><?php _e( 'the setting page', 'ballerburg9005' ); ?></a>
 			</p>
 		<?php } else {
 			if ( $bws_hide_premium_options_check ) { ?>
 				<form method="post" action="">
 					<p>
 						<input type="hidden" name="bws_hide_premium_options_submit" value="submit" />
-						<input type="submit" class="button" value="<?php _e( 'Show Pro features', 'bestwebsoft' ); ?>" />
+						<input type="submit" class="button" value="<?php _e( 'Show Pro features', 'ballerburg9005' ); ?>" />
 						<?php wp_nonce_field( $plugin_basename, 'bws_license_nonce_name' ); ?>
 					</p>
 				</form>
 			<?php } ?>
 			<form method="post" action="">
 				<p>
-					<?php _e( 'Enter your license key to install and activate', 'bestwebsoft' ); ?>
-					<a href="<?php echo esc_url( 'https://bestwebsoft.com/products/wordpress/plugins/' . $link_slug . '/?k=' . $link_key . '&pn=' . $link_pn . '&v=' . $plugin_info["Version"] . '&wp_v=' . $wp_version ); ?>" target="_blank" title="<?php echo $plugin_info["Name"]; ?> Pro">Pro</a>
-					<?php _e( 'version of the plugin.', 'bestwebsoft' ); ?><br />
+					<?php _e( 'Enter your license key to install and activate', 'ballerburg9005' ); ?>
+					<a href="<?php echo esc_url( 'https://ballerburg9005.com/products/wordpress/plugins/' . $link_slug . '/?k=' . $link_key . '&pn=' . $link_pn . '&v=' . $plugin_info["Version"] . '&wp_v=' . $wp_version ); ?>" target="_blank" title="<?php echo $plugin_info["Name"]; ?> Pro">Pro</a>
+					<?php _e( 'version of the plugin.', 'ballerburg9005' ); ?><br />
 					<span class="bws_info">
-						<?php _e( 'License key can be found in the', 'bestwebsoft' ); ?>
-						<a href="https://bestwebsoft.com/wp-login.php">Client Area</a>
-						<?php _e( '(your username is the email address specified during the purchase).', 'bestwebsoft' ); ?>
+						<?php _e( 'License key can be found in the', 'ballerburg9005' ); ?>
+						<a href="https://ballerburg9005.com/wp-login.php">Client Area</a>
+						<?php _e( '(your username is the email address specified during the purchase).', 'ballerburg9005' ); ?>
 					</span>
 				</p>
 				<?php if ( $trial_days_number !== false )
-					$trial_days_number = __( 'or', 'bestwebsoft' ) . ' <a href="https://bestwebsoft.com/products/wordpress/plugins/' . $link_slug . '/trial/" target="_blank">' . sprintf( __( 'Start Your Free %s-Day Trial Now', 'bestwebsoft' ), $trial_days_number ) . '</a>';
+					$trial_days_number = __( 'or', 'ballerburg9005' ) . ' <a href="https://ballerburg9005.com/products/wordpress/plugins/' . $link_slug . '/trial/" target="_blank">' . sprintf( __( 'Start Your Free %s-Day Trial Now', 'ballerburg9005' ), $trial_days_number ) . '</a>';
 				if ( isset( $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] ) &&
 					'5' < $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] &&
 					$bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['time'] > ( time() - ( 24 * 60 * 60 ) ) ) { ?>
 					<p>
 						<input disabled="disabled" type="text" name="bws_license_key" value="<?php echo esc_attr( $bws_license_key ); ?>" />
-						<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Activate', 'bestwebsoft' ); ?>" />
+						<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Activate', 'ballerburg9005' ); ?>" />
 						<?php if ( $trial_days_number !== false ) echo $trial_days_number; ?>
 					</p>
-					<p><?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'bestwebsoft' ); ?></p>
+					<p><?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'ballerburg9005' ); ?></p>
 				<?php } else { ?>
 					<p>
 						<input type="text" maxlength="100" name="bws_license_key" value="<?php echo esc_attr( $bws_license_key ); ?>" />
 						<input type="hidden" name="bws_license_plugin" value="<?php echo esc_attr( $bws_license_plugin ); ?>" />
 						<input type="hidden" name="bws_license_submit" value="submit" />
-						<input type="submit" class="button-primary" value="<?php _e( 'Activate', 'bestwebsoft' ); ?>" />
+						<input type="submit" class="button-primary" value="<?php _e( 'Activate', 'ballerburg9005' ); ?>" />
 						<?php if ( $trial_days_number !== false )
 							echo $trial_days_number;
 						wp_nonce_field( $plugin_basename, 'bws_license_nonce_name' ); ?>

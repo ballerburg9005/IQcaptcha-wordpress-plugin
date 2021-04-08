@@ -1,7 +1,7 @@
 <?php
 /**
  * Display content of "Allow List" tab on settings page
- * @subpackage reCaptcha
+ * @subpackage IQcaptcha
  * @since 1.27
  * @version 1.0.0
  */
@@ -43,7 +43,7 @@ if ( ! class_exists( 'Gglcptch_Allowlist' ) ) {
 		 */
 		function display_content() {
 			global $gglcptch_options; ?>
-			<h1 class="wp-heading-inline"><?php _e( 'reCaptcha Allow List', 'google-captcha' ); ?></h1>
+			<h1 class="wp-heading-inline"><?php _e( 'IQcaptcha Allow List', 'google-captcha' ); ?></h1>
 			<?php if ( ! ( isset( $_REQUEST['gglcptch_show_allowlist_form'] ) || isset( $_REQUEST['gglcptch_add_to_allowlist'] ) ) ) { ?>
 				<form method="post" action="admin.php?page=google-captcha-allowlist.php" style="display: inline;">
 					<button class="page-title-action" name="gglcptch_show_allowlist_form" value="on"<?php echo ( isset( $_POST['gglcptch_add_to_allowlist'] ) ) ? ' style="display: none;"' : ''; ?>><?php _e( 'Add New', 'google-captcha' ); ?></button>

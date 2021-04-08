@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: bestwebsoft\n"
+"Project-Id-Version: ballerburg9005\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-15 10:55+0200\n"
 "PO-Revision-Date: 2021-02-15 10:55+0200\n"
-"Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
-"Language-Team: bestwebsoft.com <https://support.bestwebsoft.com>\n"
+"Last-Translator: ballerburg9005.com <plugins@ballerburg9005.com>\n"
+"Language-Team: ballerburg9005.com <https://support.ballerburg9005.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -190,8 +190,8 @@ msgid "Add New"
 msgstr "Добавить"
 
 #: bws_functions.php:281
-msgid "Thank you for installing plugins by BestWebSoft!"
-msgstr "Спасибо за установку плагинов компании BestWebSoft!"
+msgid "Thank you for installing plugins by ballerburg9005!"
+msgstr "Спасибо за установку плагинов компании ballerburg9005!"
 
 #: bws_functions.php:283
 msgid "More Details"
@@ -256,8 +256,8 @@ msgid "Add shortcode"
 msgstr "Добавить шорткод"
 
 #: bws_functions.php:679
-msgid "Add BestWebSoft plugins' shortcodes using this button."
-msgstr "Добавьте шорткоды BestWebSoft плагинов с помощью этой кнопки."
+msgid "Add ballerburg9005 plugins' shortcodes using this button."
+msgstr "Добавьте шорткоды ballerburg9005 плагинов с помощью этой кнопки."
 
 #: bws_functions.php:765
 msgid "Close"
@@ -659,14 +659,14 @@ msgstr "Client Area"
 #: bws_menu.php:410
 #, php-format
 msgid ""
-"Manage your license(-s) and change domain names using the %s at BestWebSoft."
+"Manage your license(-s) and change domain names using the %s at ballerburg9005."
 msgstr ""
 "Управляйте своей лицензией(-ами) и меняйте доменные имена, используя %s на "
-"BestWebSoft."
+"ballerburg9005."
 
 #: bws_menu.php:413
-msgid "Return to BestWebSoft Panel"
-msgstr "Возврат к BestWebSoft Panel"
+msgid "Return to ballerburg9005 Panel"
+msgstr "Возврат к ballerburg9005 Panel"
 
 #: bws_menu.php:420 bws_menu.php:440 bws_menu.php:569
 msgid "All"
@@ -938,10 +938,10 @@ msgstr "Зайти в Client Area"
 #: class-bws-settings.php:837
 msgid ""
 "Manage active licenses, download BWS products, and view your payment history "
-"using BestWebSoft Client Area."
+"using ballerburg9005 Client Area."
 msgstr ""
 "Управляй активными лицензиями, загружай BWS продукты, а также просматривай "
-"историю платежей с помощью BestWebSoft Client Area."
+"историю платежей с помощью ballerburg9005 Client Area."
 
 #: class-bws-settings.php:895 class-bws-settings.php:1012
 msgid "This license key is bound to another site."
@@ -1327,8 +1327,8 @@ msgstr ""
 "статистику сайта."
 
 #: product_list.php:178
-msgid "Protect WordPress website forms from spam entries with reCaptcha."
-msgstr "Защищайте формы вашего сайта WordPress от спама с помощью reCaptcha."
+msgid "Protect WordPress website forms from spam entries with IQcaptcha."
+msgstr "Защищайте формы вашего сайта WordPress от спама с помощью IQcaptcha."
 
 #: product_list.php:188
 msgid "Add customized Google maps to WordPress posts, pages and widgets."
@@ -1882,10 +1882,10 @@ msgstr ""
 #~ msgstr "Нет действующего лицензионного ключа?"
 
 #~ msgid ""
-#~ "Join BestWebSoft Pro Membership today, cancel any time and use all "
+#~ "Join ballerburg9005 Pro Membership today, cancel any time and use all "
 #~ "plugins on a single website %s for only %s per month."
 #~ msgstr ""
-#~ "Присоединяйтесь к BestWebSoft Pro Membership сегодня, отменяйте подписку "
+#~ "Присоединяйтесь к ballerburg9005 Pro Membership сегодня, отменяйте подписку "
 #~ "в любое время и используйте все плагины на одном сайте  %s всего лишь за "
 #~ "%s в месяц."
 

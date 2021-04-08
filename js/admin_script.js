@@ -7,8 +7,8 @@
             $( '#gglcptch_score_out_v3' ).text( score );
         } ).trigger( 'change' );
 
-		$( 'input[name="gglcptch_recaptcha_version"]' ).change( function() {
-			var versions = $( 'input[name="gglcptch_recaptcha_version"]' );
+		$( 'input[name="gglcptch_iqcaptcha_version"]' ).change( function() {
+			var versions = $( 'input[name="gglcptch_iqcaptcha_version"]' );
 			versions.each( function() {
 				if ( $( this ).is( ':checked' ) ) {
 					$( '.gglcptch_theme_' + $( this ).val() ).show();
@@ -70,12 +70,12 @@
 		$( '.gglcptch-test-results' ).remove();
 		$( '#gglcptch-test-block' ).load( $( this ).prop( 'href' ), function() {
 			$( '.gglcptch_v2, .gglcptch_invisible' ).each( function() {
-				var container = $( this ).find( '.gglcptch_recaptcha' ).attr( 'id' );
+				var container = $( this ).find( '.gglcptch_iqcaptcha' ).attr( 'id' );
 				if ( $( this ).is( ':visible' ) ) {
 					gglcptch.display( container );
 					if ( $( this ).hasClass( 'gglcptch_invisible' ) ) {
-						var gglcptch_index = $( this ).find( '.gglcptch_recaptcha' ).data( 'gglcptch_index' );
-						grecaptcha.execute( gglcptch_index );
+						var gglcptch_index = $( this ).find( '.gglcptch_iqcaptcha' ).data( 'gglcptch_index' );
+						giqcaptcha.execute( gglcptch_index );
 					}
 				}
 			} );
@@ -105,9 +105,9 @@
 			},
 			data    : {
 				action: 'gglcptch_test_keys_verification',
-				recaptcha_challenge_field : $( '#recaptcha_challenge_field' ).val(),
-				recaptcha_response_field  : $( '#recaptcha_response_field' ).val(),
-				'g-recaptcha-response'  : $( '.g-recaptcha-response' ).val(),
+				iqcaptcha_challenge_field : $( '#iqcaptcha_challenge_field' ).val(),
+				iqcaptcha_response_field  : $( '#iqcaptcha_response_field' ).val(),
+				'g-iqcaptcha-response'  : $( '.g-iqcaptcha-response' ).val(),
 				_wpnonce : $( '[name="gglcptch_test_keys_verification-nonce"]' ).val()
 			},
 			success: function( data ) {
@@ -118,8 +118,8 @@
 				} else {
 					$( '.gglcptch_verified' ).hide();
 					if (
-						'v2' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val() ||
-						'invisible' == $( 'input[name="gglcptch_recaptcha_version"]:checked' ).val()
+						'v2' == $( 'input[name="gglcptch_iqcaptcha_version"]:checked' ).val() ||
+						'invisible' == $( 'input[name="gglcptch_iqcaptcha_version"]:checked' ).val()
 					) {
 						$( '#gglcptch-test-keys' ).show();
 					}

@@ -1,7 +1,7 @@
 <?php
 /**
  * Display banners on settings page
- * @package reCaptcha by BestWebSoft
+ * @package IQcaptcha
  * @since 1.27
  */
 
@@ -25,7 +25,7 @@ if ( ! function_exists( 'gglcptch_pro_block' ) ) {
 					</div>
 				</div>
 				<div class="bws_pro_version_tooltip">
-					<a class="bws_button" href="https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="reCaptcha Pro">
+					<a class="bws_button" href="https://ballerburg9005.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=<?php echo $gglcptch_plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="IQcaptcha Pro">
 						<?php _e( 'Upgrade to Pro', 'google-captcha' ); ?>
 					</a>
 					<div class="clear"></div>

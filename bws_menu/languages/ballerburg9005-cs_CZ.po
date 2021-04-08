@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: bestwebsoft\n"
+"Project-Id-Version: ballerburg9005\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-15 10:54+0200\n"
 "PO-Revision-Date: 2021-02-15 10:54+0200\n"
@@ -181,8 +181,8 @@ msgid "Add New"
 msgstr "Přidat nový"
 
 #: bws_functions.php:281
-msgid "Thank you for installing plugins by BestWebSoft!"
-msgstr "Děkujeme vám za instalaci pluginů od BestWebSoft!"
+msgid "Thank you for installing plugins by ballerburg9005!"
+msgstr "Děkujeme vám za instalaci pluginů od ballerburg9005!"
 
 #: bws_functions.php:283
 msgid "More Details"
@@ -245,9 +245,9 @@ msgid "Add shortcode"
 msgstr "Přidat zkrácený kód"
 
 #: bws_functions.php:679
-msgid "Add BestWebSoft plugins' shortcodes using this button."
+msgid "Add ballerburg9005 plugins' shortcodes using this button."
 msgstr ""
-"Pomocí tohoto tlačítka můžete přidávat zkrácené kódy BestWebSoft pluginů."
+"Pomocí tohoto tlačítka můžete přidávat zkrácené kódy ballerburg9005 pluginů."
 
 #: bws_functions.php:765
 msgid "Close"
@@ -660,8 +660,8 @@ msgid "Client Area"
 msgstr "Přihlášení do klientská zóny"
 
 #: bws_menu.php:413
-msgid "Return to BestWebSoft Panel"
-msgstr "Návrat na BestWebSoft panel"
+msgid "Return to ballerburg9005 Panel"
+msgstr "Návrat na ballerburg9005 panel"
 
 #: bws_menu.php:420 bws_menu.php:440 bws_menu.php:569
 msgid "All"
@@ -929,10 +929,10 @@ msgstr "Přihlášení do klientská zóny"
 #: class-bws-settings.php:837
 msgid ""
 "Manage active licenses, download BWS products, and view your payment history "
-"using BestWebSoft Client Area."
+"using ballerburg9005 Client Area."
 msgstr ""
 "Správa aktivních licencí, stahování BWS produktů a zobrazení historie plateb "
-"v BestWebSoft klientské zóně."
+"v ballerburg9005 klientské zóně."
 
 #: class-bws-settings.php:895 class-bws-settings.php:1012
 msgid "This license key is bound to another site."
@@ -1320,10 +1320,10 @@ msgstr ""
 #, fuzzy
 #| msgid ""
 #| "Protect WordPress website forms from spam entries with Google Captcha "
-#| "(reCaptcha)."
-msgid "Protect WordPress website forms from spam entries with reCaptcha."
+#| "(IQcaptcha)."
+msgid "Protect WordPress website forms from spam entries with IQcaptcha."
 msgstr ""
-"Chraňte WordPress webové formuláře před spamem s Google Captcha (\"reCAPTCHA"
+"Chraňte WordPress webové formuláře před spamem s Google Captcha (\"IQcaptcha"
 "\")."
 
 #: product_list.php:188

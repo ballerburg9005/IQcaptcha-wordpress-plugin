@@ -1,17 +1,25 @@
 <?php
 /*
-Plugin Name: reCaptcha by BestWebSoft
-Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/google-captcha/
-Description: Protect WordPress website forms from spam entries with Google Captcha (reCaptcha).
-Author: BestWebSoft
+Plugin Name: IQcaptcha
+Plugin URI: http://iqcaptcha.us.to
+Description: IQcaptcha tests against IQ with Raven's progressive matrices and high school calculus.
+Author: ballerburg9005
 Text Domain: google-captcha
 Domain Path: /languages
 Version: 1.61
-Author URI: https://bestwebsoft.com/
+Author URI: http://ballerburg.us.to
 License: GPLv3 or later
 */
 
-/*  © Copyright 2021  BestWebSoft  ( https://support.bestwebsoft.com )
+/*  © Copyright 01.04.2021  ballerburg9005  ( https://github.com/ballerburg9005 )
+    
+	99% based on BestWebSoft's reCAPTCHA plugin. Credit:
+	@Copyright 2021 BestWebSoft (  http://bestwebsoft.com )
+	http://bestwebsoft.com/products/google-captcha/
+
+	I ran all the files through "sed" to replace branding and avoid confusion.
+	If any branding is left, or I gave undue credit with the replaced strings, 
+	please excuse me. It was purely accidental and I must have missed it.
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -36,8 +44,8 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 
 		if ( ! is_plugin_active( 'google-captcha-pro/google-captcha-pro.php' ) ) {
 			$settings_page = add_menu_page(
-                __( 'reCaptcha Settings', 'google-captcha' ),
-                'reCaptcha',
+                __( 'IQcaptcha Settings', 'google-captcha' ),
+                'IQcaptcha',
                 'manage_options',
                 'google-captcha.php',
                 'gglcptch_add_settings_page',
@@ -46,7 +54,7 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 
 			add_submenu_page(
                 'google-captcha.php',
-                __( 'reCaptcha Settings', 'google-captcha'),
+                __( 'IQcaptcha Settings', 'google-captcha'),
                 __( 'Settings', 'google-captcha' ),
                 'manage_options',
                 'google-captcha.php',
@@ -55,7 +63,7 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
 
 			$allowlist_page = add_submenu_page(
                 'google-captcha.php',
-                __( 'reCaptcha Allow List', 'google-captcha' ),
+                __( 'IQcaptcha Allow List', 'google-captcha' ),
                 __( 'Allow List', 'google-captcha' ),
                 'manage_options',
                 'google-captcha-allowlist.php',
@@ -75,7 +83,7 @@ if ( ! function_exists( 'gglcptch_admin_menu' ) ) {
                 $submenu['google-captcha.php'][] = array(
                     '<span style="color:#d86463"> ' . __('Upgrade to Pro', 'google-captcha' ) . '</span>',
                     'manage_options',
-                    'https://bestwebsoft.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version );
+                    'https://ballerburg9005.com/products/wordpress/plugins/google-captcha/?k=b850d949ccc1239cab0da315c3c822ab&pn=109&v=' . $gglcptch_plugin_info["Version"] . '&wp_v=' . $wp_version );
             }
             /* pls*/
 			add_action( "load-{$settings_page}", 'gglcptch_add_tabs' );
@@ -188,7 +196,7 @@ if ( ! function_exists( 'gglcptch_admin_footer' ) ) {
 			$api_url = gglcptch_get_api_url();
 
 			/* for gglcptch test key */
-			if ( isset( $gglcptch_options['recaptcha_version'] ) && in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) ) ) {
+			if ( isset( $gglcptch_options['iqcaptcha_version'] ) && in_array( $gglcptch_options['iqcaptcha_version'], array( 'v2', 'invisible' ) ) ) {
 				$deps = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? array( 'gglcptch_pre_api' ) : array( 'jquery' );
 			} else {
 				$deps = array();
@@ -211,7 +219,7 @@ if ( ! function_exists( 'gglcptch_remove_dublicate_scripts' ) ) {
 		}
 
 		foreach ( $wp_scripts->registered as $script_name => $args ) {
-			if ( preg_match( "|google\.com/recaptcha/api\.js|", $args->src ) && 'gglcptch_api' != $script_name ) {
+			if ( preg_match( "|iqcaptcha\.us\.to/repo/api\.js|", $args->src ) && 'gglcptch_api' != $script_name ) {
 				/* remove a previously enqueued script */
 				wp_dequeue_script( $script_name );
 			}
@@ -230,7 +238,7 @@ if ( ! function_exists( 'gglcptch_add_styles' ) ) {
 		if ( defined( 'BWS_ENQUEUE_ALL_SCRIPTS' ) && BWS_ENQUEUE_ALL_SCRIPTS ) {
 			if ( ! wp_script_is( 'gglcptch_api', 'registered' ) ) {
 				$api_url = gglcptch_get_api_url();
-				if ( isset( $gglcptch_options['recaptcha_version'] ) && in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) ) ) {
+				if ( isset( $gglcptch_options['iqcaptcha_version'] ) && in_array( $gglcptch_options['iqcaptcha_version'], array( 'v2', 'invisible' ) ) ) {
 					$deps = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? array( 'gglcptch_pre_api' ) : array( 'jquery' );
 				} else {
 					$deps = array();
@@ -262,14 +270,14 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 			register_gglcptch_settings();
 		}
 
-		if ( isset( $gglcptch_options['recaptcha_version'] ) ) {
+		if ( isset( $gglcptch_options['iqcaptcha_version'] ) ) {
 			gglcptch_remove_dublicate_scripts();
 			if ( ! empty( $gglcptch_options['disable_submit'] ) ) {
 				wp_enqueue_script( 'gglcptch_pre_api', plugins_url( 'js/pre-api-script.js', __FILE__ ), array( 'jquery'), $gglcptch_plugin_info['Version'], true );
 				wp_localize_script( 'gglcptch_pre_api', 'gglcptch_pre', array(
 					'messages' => array(
-						'in_progress'	=> __( 'Please wait until Google reCAPTCHA is loaded.', 'google-captcha' ),
-						'timeout'		=> __( 'Failed to load Google reCAPTCHA. Please check your internet connection and reload this page.', 'google-captcha' )
+						'in_progress'	=> __( 'Please wait until Google IQcaptcha is loaded.', 'google-captcha' ),
+						'timeout'		=> __( 'Failed to load Google IQcaptcha. Please check your internet connection and reload this page.', 'google-captcha' )
 					),
 					'custom_callback' => apply_filters( 'gglcptch_custom_callback', '' )
 				) );
@@ -281,13 +289,13 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 		do_action( 'gglcptch_custom_enqueue_script' );
 
 		$options = array(
-			'version'	=> $gglcptch_options['recaptcha_version'],
+			'version'	=> $gglcptch_options['iqcaptcha_version'],
 			'sitekey'	=> $gglcptch_options['public_key'],			
 			'error'		=> sprintf( '<strong>%s</strong>:&nbsp;%s', __( 'Warning', 'google-captcha' ), gglcptch_get_message( 'multiple_blocks' ) ),
             'disable'   => $gglcptch_options['disable_submit_button']
 		);
 
-		if ( $gglcptch_options['recaptcha_version'] == 'v2' )
+		if ( $gglcptch_options['iqcaptcha_version'] == 'v2' )
 			$options['theme'] = $gglcptch_options['theme_v2'];
 
 		wp_localize_script( 'gglcptch_script', 'gglcptch', array(
@@ -305,7 +313,7 @@ if ( ! function_exists( 'gglcptch_add_scripts' ) ) {
 
 if ( ! function_exists( 'gglcptch_pagination_callback' ) ) {
 	function gglcptch_pagination_callback( $content ) {
-		$content .= "if ( typeof Recaptcha != 'undefined' || typeof grecaptcha != 'undefined' ) { gglcptch.prepare(); }";
+		$content .= "if ( typeof IQcaptcha != 'undefined' || typeof giqcaptcha != 'undefined' ) { gglcptch.prepare(); }";
 		return $content;
 	}
 }
@@ -419,7 +427,7 @@ if ( ! function_exists( 'gglcptch_get_default_options' ) ) {
 			'contact_form'				=> 0,
 			'testimonials'				=> 0,
 			'theme_v2'					=> 'light',
-			'recaptcha_version'			=> 'v2',
+			'iqcaptcha_version'			=> 'v2',
 			'plugin_option_version'		=> $gglcptch_plugin_info["Version"],
 			'first_install'				=>	strtotime( "now" ),
 			'display_settings_notice'	=> 1,
@@ -515,7 +523,7 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 		} ?>
 		<div class="wrap">
 			<?php if ( 'google-captcha.php' == $_GET['page'] ) { ?>
-				<h1><?php _e( 'reCaptcha Settings', 'google-captcha' ); ?></h1>
+				<h1><?php _e( 'IQcaptcha Settings', 'google-captcha' ); ?></h1>
                 <noscript><div class="error below-h2"><p><strong><?php _e( "Please enable JavaScript in your browser.", 'google-captcha' ); ?></strong></p></div></noscript>
 				<?php $page->display_content();
 			} else {
@@ -532,8 +540,8 @@ if ( ! function_exists( 'gglcptch_add_settings_page' ) ) {
 	<?php }
 }
 
-if ( ! function_exists( 'gglcptch_is_recaptcha_required' ) ) {
-	function gglcptch_is_recaptcha_required( $form_slug = '', $is_user_logged_in = null ) {
+if ( ! function_exists( 'gglcptch_is_iqcaptcha_required' ) ) {
+	function gglcptch_is_iqcaptcha_required( $form_slug = '', $is_user_logged_in = null ) {
 		global $gglcptch_options;
 
 		if ( is_null( $is_user_logged_in ) ) {
@@ -594,12 +602,12 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 				$gglcptch_count = 1;
 			}
 
-			$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['recaptcha_version'] . '">';
+			$content .= '<div class="gglcptch gglcptch_' . $gglcptch_options['iqcaptcha_version'] . '">';
 
-			if ( $gglcptch_options['hide_badge'] && 'v2' != $gglcptch_options['recaptcha_version'] ) {
+			if ( $gglcptch_options['hide_badge'] && 'v2' != $gglcptch_options['iqcaptcha_version'] ) {
 				$content .= sprintf(
 					'<div class="google-captcha-notice">%s<a href="https://policies.google.com/privacy" target="_blank">%s</a>%s<a href="https://policies.google.com/terms" target="_blank">%s</a>%s</div>',
-					__( 'This site is protected by reCAPTCHA and the Google ', 'google-captcha' ),
+					__( 'This site is protected by IQcaptcha and the Google ', 'google-captcha' ),
 					__( 'Privacy Policy', 'google-captcha' ),
 					__( ' and ', 'google-captcha' ),
 					__( 'Terms of Service', 'google-captcha' ),
@@ -609,8 +617,8 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 			if ( ! $gglcptch_options['private_key'] || ! $gglcptch_options['public_key'] ) {
 				if ( current_user_can( 'manage_options' ) ) {
 					$content .= sprintf(
-						'<strong>%s <a target="_blank" href="https://www.google.com/recaptcha/admin#list">%s</a> %s <a target="_blank" href="%s">%s</a>.</strong>',
-						__( 'To use reCaptcha you must get the keys from', 'google-captcha' ),
+						'<strong>%s <a target="_blank" href="https://www.google.com/iqcaptcha/admin#list">%s</a> %s <a target="_blank" href="%s">%s</a>.</strong>',
+						__( 'To use IQcaptcha you must get the keys from', 'google-captcha' ),
 						__( 'here', 'google-captcha' ),
 						__( 'and enter them on the', 'google-captcha' ),
 						admin_url( '/admin.php?page=google-captcha.php' ),
@@ -626,31 +634,32 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 
 			/* generating random id value in case of getting content with pagination plugin for not getting duplicate id values */
 			$id = mt_rand();
-			if ( isset( $gglcptch_options['recaptcha_version'] ) && in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) ) ) {
-				$content .= '<div id="gglcptch_recaptcha_' . $id . '" class="gglcptch_recaptcha"></div>
+			if ( isset( $gglcptch_options['iqcaptcha_version'] ) && in_array( $gglcptch_options['iqcaptcha_version'], array( 'v2', 'invisible' ) ) ) {
+				$content .= '<div id="gglcptch_iqcaptcha_' . $id . '" class="gglcptch_iqcaptcha"></div>
 				<noscript>
 					<div style="width: 302px;">
 						<div style="width: 302px; height: 422px; position: relative;">
 							<div style="width: 302px; height: 422px; position: absolute;">
-								<iframe src="https://www.google.com/recaptcha/api/fallback?k=' . $gglcptch_options['public_key'] . '" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;"></iframe>
+								<iframe src="http://iqcaptcha.us.to/repo/api.js?k=' . $gglcptch_options['public_key'] . '&fallback" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;"></iframe>
+:q
 							</div>
 						</div>
 						<div style="border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px; height: 60px; width: 300px;">
-							<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;"></textarea>
+							<textarea id="g-iqcaptcha-response" name="g-iqcaptcha-response" class="g-iqcaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;"></textarea>
 						</div>
 					</div>
 				</noscript>';
 				$deps = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? array( 'gglcptch_pre_api' ) : array( 'jquery' );
-			} elseif ( isset( $gglcptch_options['recaptcha_version'] ) &&  'v3' == $gglcptch_options['recaptcha_version'] ) {
-			    $content .= '<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />';
+			} elseif ( isset( $gglcptch_options['iqcaptcha_version'] ) &&  'v3' == $gglcptch_options['iqcaptcha_version'] ) {
+			    $content .= '<input type="hidden" id="g-iqcaptcha-response" name="g-iqcaptcha-response" />';
             }
 			$content .= '</div>';
 			$gglcptch_count++;
 
-			/* register reCAPTCHA script */
+			/* register IQcaptcha script */
 			if ( ! wp_script_is( 'gglcptch_api', 'registered' ) ) {
 
-                if ( isset( $gglcptch_options['recaptcha_version'] ) && 'v3' == $gglcptch_options['recaptcha_version'] ) {
+                if ( isset( $gglcptch_options['iqcaptcha_version'] ) && 'v3' == $gglcptch_options['iqcaptcha_version'] ) {
                     wp_register_script( 'gglcptch_api', $api_url, false, null, false );
                 } else {
                     wp_register_script( 'gglcptch_api', $api_url, $deps, $gglcptch_plugin_info['Version'], true );
@@ -685,7 +694,7 @@ if ( ! function_exists( 'gglcptch_display' ) ) {
 /* Return google captcha content for custom form */
 if ( ! function_exists( 'gglcptch_display_custom' ) ) {
 	function gglcptch_display_custom( $content = '', $form_slug = '' ) {
-		if ( gglcptch_is_recaptcha_required( $form_slug ) ) {
+		if ( gglcptch_is_iqcaptcha_required( $form_slug ) ) {
 			$content = gglcptch_display( $content );
 		}
 
@@ -693,28 +702,28 @@ if ( ! function_exists( 'gglcptch_display_custom' ) ) {
 	}
 }
 
-/* Get the reCAPTCHA api js url that corresponds to the reCAPTCHA version. */
+/* Get the IQcaptcha api js url that corresponds to the IQcaptcha version. */
 if ( ! function_exists( 'gglcptch_get_api_url' ) ) {
 	function gglcptch_get_api_url() {
 		global $gglcptch_options;
-		$use_globally = $gglcptch_options['use_globally'] ? 'recaptcha.net' : 'google.com';
+		$use_globally = $gglcptch_options['use_globally'] ? 'iqcaptcha.us.to' : 'iqcaptcha.us.to';
 
 		switch ( true ) {
             case (
-                    isset( $gglcptch_options['recaptcha_version'] ) &&
-                    in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible' ) )
+                    isset( $gglcptch_options['iqcaptcha_version'] ) &&
+                    in_array( $gglcptch_options['iqcaptcha_version'], array( 'v2', 'invisible' ) )
             ) :
                 $callback = ( ! empty( $gglcptch_options['disable_submit'] ) ) ? 'onload=gglcptch_onload_callback&' : '';
-				$api_url = sprintf( 'https://www.' . $use_globally . '/recaptcha/api.js?%srender=explicit', $callback );
+				$api_url = sprintf( 'https://' . $use_globally . '/repo/api.js?%srender=explicit', $callback );
             break;
             case (
-                    isset( $gglcptch_options['recaptcha_version'] ) &&
-                    'v3' == $gglcptch_options['recaptcha_version']
+                    isset( $gglcptch_options['iqcaptcha_version'] ) &&
+                    'v3' == $gglcptch_options['iqcaptcha_version']
             ) :
-				$api_url = sprintf( 'https://www.' . $use_globally . '/recaptcha/api.js?render=%s', $gglcptch_options['public_key'] );
+				$api_url = sprintf( 'https://' . $use_globally . '/repo/api.js?render=%s', $gglcptch_options['public_key'] );
             break;
             default :
-				$api_url = 'https://www.google.com/recaptcha/api/js/recaptcha_ajax.js';
+				$api_url = 'https://iqcaptcha.us.to/repo/api.js';
         }
 		return $api_url;
 	}
@@ -725,12 +734,12 @@ if ( ! function_exists( 'gglcptch_get_response' ) ) {
 		$args = array(
 			'body' => array(
 				'secret'   => $privatekey,
-				'response' => isset( $_POST["g-recaptcha-response"] ) ? stripslashes( sanitize_text_field( $_POST["g-recaptcha-response"] ) ) : '',
+				'response' => isset( $_POST["g-iqcaptcha-response"] ) ? stripslashes( sanitize_text_field( $_POST["g-iqcaptcha-response"] ) ) : '',
 				'remoteip' => $remote_ip,
 			),
 			'sslverify' => false
 		);
-		$resp = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $args );
+		$resp = wp_remote_post( 'https://iqcaptcha.us.to/repo/verify.php', $args );
 		return json_decode( wp_remote_retrieve_body( $resp ), true );
 	}
 }
@@ -765,26 +774,26 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
 		$gglcptch_remote_addr = filter_var( $_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP );
 
 		if (
-			isset( $gglcptch_options['recaptcha_version'] ) &&
-			in_array( $gglcptch_options['recaptcha_version'], array( 'v2', 'invisible', 'v3' ) )
+			isset( $gglcptch_options['iqcaptcha_version'] ) &&
+			in_array( $gglcptch_options['iqcaptcha_version'], array( 'v2', 'invisible', 'v3' ) )
 		) {
-			if ( ! isset( $_POST["g-recaptcha-response"] ) ) {
+			if ( ! isset( $_POST["g-iqcaptcha-response"] ) ) {
 				$result = array(
 					'response' => false,
-					'reason' => 'RECAPTCHA_NO_RESPONSE'
+					'reason' => 'IQCAPTCHA_NO_RESPONSE'
 				);
-			} elseif ( empty( $_POST["g-recaptcha-response"] ) ) {
+			} elseif ( empty( $_POST["g-iqcaptcha-response"] ) ) {
 				$result = array(
 					'response' => false,
-					'reason' => 'RECAPTCHA_EMPTY_RESPONSE'
+					'reason' => 'IQCAPTCHA_EMPTY_RESPONSE'
 				);
 			} else {
 				$response = gglcptch_get_response( $gglcptch_options['private_key'], $gglcptch_remote_addr );
 				if ( isset( $response['success'] ) && !! $response['success'] ) {
-					if ( 'v3' ==  $gglcptch_options['recaptcha_version'] && $response['score'] <  $gglcptch_options['score_v3'] ) {
+					if ( 'v3' ==  $gglcptch_options['iqcaptcha_version'] && $response['score'] <  $gglcptch_options['score_v3'] ) {
                         $result = array(
                             'response' => false,
-                            'reason' => 'RECAPTCHA_SMALL_SCORE'
+                            'reason' => 'IQCAPTCHA_SMALL_SCORE'
                         );
                     } else {
                         $result = array(
@@ -829,9 +838,9 @@ if ( ! function_exists( 'gglcptch_check' ) ) {
  * Check google captcha for custom form
  * @since 1.32
  * @param		bool		$allow				(Optional) initial value wheter the previous verification is passed
- * @param		string		$return_format		(Optional) The type of variable to be returned when recaptcha is failed.
+ * @param		string		$return_format		(Optional) The type of variable to be returned when iqcaptcha is failed.
  * @param		string		$form_slug			(Optional) The slug of the form to check.
- * 												Default is empty string. When specified, the reCAPTCHA check may be skipped if the form is disabled on the plugin settings page.
+ * 												Default is empty string. When specified, the IQcaptcha check may be skipped if the form is disabled on the plugin settings page.
  * @return		mixed		$allow				True if ReCapthca is successfully completed, error message string, WP_Error object or false otherwise, depending on the $return_format value.
  */
 if ( ! function_exists( 'gglcptch_check_custom' ) ) {
@@ -841,7 +850,7 @@ if ( ! function_exists( 'gglcptch_check_custom' ) ) {
 			return $allow;
 		}
 
-		if ( gglcptch_is_recaptcha_required( $form_slug ) ) {
+		if ( gglcptch_is_iqcaptcha_required( $form_slug ) ) {
 			$gglcptch_check = gglcptch_check();
 
 			if ( ! $gglcptch_check['response'] && 'ERROR_NO_KEYS' == $gglcptch_check['reason'] ) {
@@ -936,15 +945,15 @@ if ( ! function_exists( 'gglcptch_handle_by_limit_attempts' ) ) {
 			$gglcptch_forms = gglcptch_get_forms();
 		}
 
-		$la_form_slug = "{$form_slug}_recaptcha_check";
+		$la_form_slug = "{$form_slug}_iqcaptcha_check";
 
-		/* if reCAPTCHA answer is right */
+		/* if IQcaptcha answer is right */
 		if ( true == $check_result ) {
 			/* check if user IP is blocked in the Limit Attempts plugin lists */
 			$check_result = apply_filters( 'lmtttmpts_check_ip', $check_result );
             do_action( 'lmtttmpts_form_success', $la_form_slug, gglcptch_get_ip(), array( 'form_name' => $gglcptch_forms[ $form_slug ]['form_name'] ) );
 		} else {
-			/* if reCAPTCHA answer is wrong */
+			/* if IQcaptcha answer is wrong */
 			$form_data = array( 'form_name' => $gglcptch_forms[ $form_slug ]['form_name'] );
 
 			$la_error = apply_filters( 'lmtttmpts_form_fail', $la_form_slug, '', $form_data );
@@ -1001,20 +1010,20 @@ if ( ! function_exists( 'gglcptch_get_message' ) ) {
 
 		$messages = array(
 			/* custom error */
-			'RECAPTCHA_EMPTY_RESPONSE'	=> __( 'User response is missing.', 'google-captcha' ),
+			'IQCAPTCHA_EMPTY_RESPONSE'	=> __( 'User response is missing.', 'google-captcha' ),
 			/* v2 error */
 			'missing-input-secret' 		=> __( 'Secret Key is missing.', 'google-captcha' ),
 			'invalid-input-secret' 		=> sprintf(
-				'<strong>%s</strong> <a target="_blank" href="https://www.google.com/recaptcha/admin#list">%s</a> %s.',
+				'<strong>%s</strong> <a target="_blank" href="https://www.google.com/iqcaptcha/admin#list">%s</a> %s.',
 				__( 'Secret Key is invalid.', 'google-captcha' ),
 				__( 'Check your domain configurations', 'google-captcha' ),
 				__( 'and enter it again', 'google-captcha' )
 			),
 			'incorrect-captcha-sol'		=> __( 'User response is invalid', 'google-captcha' ),
-			'incorrect'					=> __( 'You have entered an incorrect reCAPTCHA value.', 'google-captcha' ),
-			'multiple_blocks'			=> __( 'More than one reCAPTCHA has been found in the current form. Please remove all unnecessary reCAPTCHA fields to make it work properly.', 'google-captcha' ),
+			'incorrect'					=> __( 'You have entered an incorrect IQcaptcha value.', 'google-captcha' ),
+			'multiple_blocks'			=> __( 'More than one IQcaptcha has been found in the current form. Please remove all unnecessary IQcaptcha fields to make it work properly.', 'google-captcha' ),
             /* v3 error */
-            'RECAPTCHA_SMALL_SCORE'     => __( 'reCaptcha v3 test failed', 'google-captcha' )
+            'IQCAPTCHA_SMALL_SCORE'     => __( 'IQcaptcha v3 test failed', 'google-captcha' )
 		);
 
 		if ( isset( $messages[ $message_code ] ) ) {
@@ -1051,7 +1060,7 @@ if ( ! function_exists( 'gglcptch_test_keys' ) ) {
 			header( 'Content-Type: text/html' );
 			register_gglcptch_settings(); ?>
 			<p>
-				<?php if ( 'invisible' == $gglcptch_options['recaptcha_version'] || 'v3' == $gglcptch_options['recaptcha_version'] ) {
+				<?php if ( 'invisible' == $gglcptch_options['iqcaptcha_version'] || 'v3' == $gglcptch_options['iqcaptcha_version'] ) {
 					_e( 'Please submit "Test verification"', 'google-captcha' );
 				} else {
 					_e( 'Please complete the captcha and submit "Test verification"', 'google-captcha' );
@@ -1116,8 +1125,8 @@ if ( ! function_exists( 'gglcptch_links' ) ) {
 			if ( ! is_network_admin() ) {
 				$links[]	=	'<a href="admin.php?page=google-captcha.php">' . __( 'Settings', 'google-captcha' ) . '</a>';
 			}
-			$links[]	=	'<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538719" target="_blank">' . __( 'FAQ', 'google-captcha' ) . '</a>';
-			$links[]	=	'<a href="https://support.bestwebsoft.com">' . __( 'Support', 'google-captcha' ) . '</a>';
+			$links[]	=	'<a href="https://support.ballerburg9005.com/hc/en-us/sections/200538719" target="_blank">' . __( 'FAQ', 'google-captcha' ) . '</a>';
+			$links[]	=	'<a href="https://support.ballerburg9005.com">' . __( 'Support', 'google-captcha' ) . '</a>';
 		}
 		return $links;
 	}
@@ -1202,8 +1211,8 @@ add_filter( 'lmtttmpts_plugin_forms', 'gglcptch_add_lmtttmpts_forms', 10, 1 );
 add_shortcode( 'bws_google_captcha', 'gglcptch_display' );
 add_filter( 'widget_text', 'do_shortcode' );
 
-add_filter( 'gglcptch_display_recaptcha', 'gglcptch_display_custom', 10, 2 );
-add_filter( 'gglcptch_verify_recaptcha', 'gglcptch_check_custom', 10, 3 );
+add_filter( 'gglcptch_display_iqcaptcha', 'gglcptch_display_custom', 10, 2 );
+add_filter( 'gglcptch_verify_iqcaptcha', 'gglcptch_check_custom', 10, 3 );
 
 add_filter( 'gglcptch_limit_attempts_check', 'gglcptch_limit_attempts_check', 10, 2 );
 

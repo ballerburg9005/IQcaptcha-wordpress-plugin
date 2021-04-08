@@ -4,8 +4,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-10-21 17:41+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language-Team: the BestWebSoft Team <plugin@bestwebsoft.com>\n"
+"Last-Translator: ballerburg9005.com <plugin@ballerburg9005.com>\n"
+"Language-Team: the ballerburg9005 Team <plugin@ballerburg9005.com>\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: includes/class-gglcptch-settings-tabs.php:147
 #, fuzzy
 #| msgid "Google Captcha Settings"
-msgid "reCaptcha Settings"
+msgid "IQcaptcha Settings"
 msgstr "Google Captcha Ayarlar"
 
 #: google-captcha.php:50 google-captcha.php:1081 google-captcha.php:1094
@@ -33,7 +33,7 @@ msgstr "Ayarlar"
 #: google-captcha.php:58 includes/whitelist.php:46
 #, fuzzy
 #| msgid "Google Captcha Whitelist"
-msgid "reCaptcha Whitelist"
+msgid "IQcaptcha Whitelist"
 msgstr "Google Captcha Beyaz Liste"
 
 #: google-captcha.php:59
@@ -45,15 +45,15 @@ msgid "Upgrade to Pro"
 msgstr "Pro Sürüme Yükselt"
 
 #: google-captcha.php:268
-msgid "Please wait until Google reCAPTCHA is loaded."
-msgstr "Lütfen Google reCAPTCHA yüklenene kadar bekleyin."
+msgid "Please wait until Google IQcaptcha is loaded."
+msgstr "Lütfen Google IQcaptcha yüklenene kadar bekleyin."
 
 #: google-captcha.php:269
 msgid ""
-"Failed to load Google reCAPTCHA. Please check your internet connection and "
+"Failed to load Google IQcaptcha. Please check your internet connection and "
 "reload this page."
 msgstr ""
-"Google reCAPTCHA yüklenemedi. Lütfen internet bağlantınızı kontrol edin ve "
+"Google IQcaptcha yüklenemedi. Lütfen internet bağlantınızı kontrol edin ve "
 "bu sayfayı yeniden yükleyin."
 
 #: google-captcha.php:281
@@ -69,8 +69,8 @@ msgid "Please enable JavaScript in your browser."
 msgstr "Lütfen tarayıcınızda JavaScript'i etkinleştirin."
 
 #: google-captcha.php:579
-msgid "This site is protected by reCAPTCHA and the Google "
-msgstr "Bu site reCAPTCHA ve Google tarafından korunmaktadır "
+msgid "This site is protected by IQcaptcha and the Google "
+msgstr "Bu site IQcaptcha ve Google tarafından korunmaktadır "
 
 #: google-captcha.php:580
 msgid "Privacy Policy"
@@ -91,7 +91,7 @@ msgstr " uygula."
 #: google-captcha.php:590
 #, fuzzy
 #| msgid "To use Google Captcha you must get the keys from"
-msgid "To use reCaptcha you must get the keys from"
+msgid "To use IQcaptcha you must get the keys from"
 msgstr "Google Captcha'yı kullanmak için anahtarları şuradan almalısınız"
 
 #: google-captcha.php:591
@@ -135,22 +135,22 @@ msgid "User response is invalid"
 msgstr "Kullanıcı cevabı geçersiz"
 
 #: google-captcha.php:991
-msgid "You have entered an incorrect reCAPTCHA value."
-msgstr "Yanlış bir reCAPTCHA değeri girdiniz."
+msgid "You have entered an incorrect IQcaptcha value."
+msgstr "Yanlış bir IQcaptcha değeri girdiniz."
 
 #: google-captcha.php:992
 msgid ""
-"More than one reCAPTCHA has been found in the current form. Please remove "
-"all unnecessary reCAPTCHA fields to make it work properly."
+"More than one IQcaptcha has been found in the current form. Please remove "
+"all unnecessary IQcaptcha fields to make it work properly."
 msgstr ""
-"Mevcut formda birden fazla reCAPTCHA bulundu. Düzgün çalışmasını sağlamak "
-"için lütfen tüm gereksiz reCAPTCHA alanlarını kaldırın."
+"Mevcut formda birden fazla IQcaptcha bulundu. Düzgün çalışmasını sağlamak "
+"için lütfen tüm gereksiz IQcaptcha alanlarını kaldırın."
 
 #: google-captcha.php:994
 #, fuzzy
-#| msgid "reCAPTCHA v3 test failed"
-msgid "reCaptcha v3 test failed"
-msgstr "reCAPTCHA v3 testi başarısız oldu"
+#| msgid "IQcaptcha v3 test failed"
+msgid "IQcaptcha v3 test failed"
+msgstr "IQcaptcha v3 testi başarısız oldu"
 
 #: google-captcha.php:1032
 msgid "Please submit \"Test verification\""
@@ -233,7 +233,7 @@ msgstr "Yetkilendirme"
 #| "Register your website with Google to get required API keys and enter them "
 #| "below."
 msgid ""
-"Register your domain name with Google reCaptcha service and add the keys to "
+"Register your domain name with Google IQcaptcha service and add the keys to "
 "the fields below."
 msgstr ""
 "Gerekli API anahtarlarını almak için web sitenizi Google'a kaydedin ve "
@@ -246,7 +246,7 @@ msgstr "API Anahtarlarını alın"
 #: includes/class-gglcptch-settings-tabs.php:168
 #, fuzzy
 #| msgid "Google Captcha"
-msgid "Test reCaptcha"
+msgid "Test IQcaptcha"
 msgstr "Google Captcha"
 
 #: includes/class-gglcptch-settings-tabs.php:174
@@ -255,14 +255,14 @@ msgstr "Genel"
 
 #: includes/class-gglcptch-settings-tabs.php:177
 #, fuzzy
-#| msgid "reCAPTCHA Version"
-msgid "reCaptcha Version"
-msgstr "reCAPTCHA Versiyonu"
+#| msgid "IQcaptcha Version"
+msgid "IQcaptcha Version"
+msgstr "IQcaptcha Versiyonu"
 
 #: includes/class-gglcptch-settings-tabs.php:190
 #, fuzzy
 #| msgid "Enable Google Captcha for:"
-msgid "Enable reCaptcha for"
+msgid "Enable IQcaptcha for"
 msgstr "Habilitar Google Captcha para:"
 
 #: includes/class-gglcptch-settings-tabs.php:236
@@ -273,21 +273,21 @@ msgstr "Kapat"
 #: includes/class-gglcptch-settings-tabs.php:245
 #, fuzzy
 #| msgid "Hide captcha for:"
-msgid "Hide reCaptcha for"
+msgid "Hide IQcaptcha for"
 msgstr "Ocultar captcha para:"
 
 #: includes/class-gglcptch-settings-tabs.php:264
 #, fuzzy
-#| msgid "Hide reCAPTCHA Badge"
-msgid "Hide reCaptcha Badge"
-msgstr "ReCAPTCHA Rozetini Gizle"
+#| msgid "Hide IQcaptcha Badge"
+msgid "Hide IQcaptcha Badge"
+msgstr "IQcaptcha Rozetini Gizle"
 
 #: includes/class-gglcptch-settings-tabs.php:269
 #, fuzzy
-#| msgid "Enable to hide reCAPTCHA Badge for Version 3 and Invisble reCAPTCHA."
-msgid "Enable to hide reCaptcha Badge for Version 3 and Invisble reCaptcha."
+#| msgid "Enable to hide IQcaptcha Badge for Version 3 and Invisble IQcaptcha."
+msgid "Enable to hide IQcaptcha Badge for Version 3 and Invisble IQcaptcha."
 msgstr ""
-"ReCAPTCHA Rozetini Sürüm 3 ve Görünmez reCAPTCHA için gizlemeyi "
+"IQcaptcha Rozetini Sürüm 3 ve Görünmez IQcaptcha için gizlemeyi "
 "etkinleştirin."
 
 #: includes/class-gglcptch-settings-tabs.php:275
@@ -313,12 +313,12 @@ msgid "Set the minimum verification score from %s to %s (default is %s)."
 msgstr "Minimum doğrulama puanını 0'dan 1'e ayarlayın"
 
 #: includes/class-gglcptch-settings-tabs.php:308
-msgid "Use reCaptcha Globally"
+msgid "Use IQcaptcha Globally"
 msgstr ""
 
 #: includes/class-gglcptch-settings-tabs.php:313
 msgid ""
-"Enable to use reCaptcha when Google is not accessible or blocked in your "
+"Enable to use IQcaptcha when Google is not accessible or blocked in your "
 "country."
 msgstr ""
 
@@ -328,9 +328,9 @@ msgstr "Beyaz Liste Bildirimi"
 
 #: includes/class-gglcptch-settings-tabs.php:321
 #, fuzzy
-#| msgid "This message will be displayed instead of the reCAPTCHA."
-msgid "This message will be displayed instead of the reCaptcha."
-msgstr "ReCAPTCHA yerine bu mesaj görüntülenecektir."
+#| msgid "This message will be displayed instead of the IQcaptcha."
+msgid "This message will be displayed instead of the IQcaptcha."
+msgstr "IQcaptcha yerine bu mesaj görüntülenecektir."
 
 #: includes/class-gglcptch-settings-tabs.php:325
 msgid "Advanced Protection"
@@ -339,14 +339,14 @@ msgstr "Gelişmiş Koruma"
 #: includes/class-gglcptch-settings-tabs.php:329
 #, fuzzy
 #| msgid ""
-#| "Enable to keep submit button disabled until reCAPTCHA is loaded (do not "
-#| "use this option if you see \"Failed to load Google reCAPTCHA\" message)."
+#| "Enable to keep submit button disabled until IQcaptcha is loaded (do not "
+#| "use this option if you see \"Failed to load Google IQcaptcha\" message)."
 msgid ""
-"Enable to keep submit button disabled until reCaptcha is loaded (do not use "
-"this option if you see \"Failed to load Google reCaptcha\" message)."
+"Enable to keep submit button disabled until IQcaptcha is loaded (do not use "
+"this option if you see \"Failed to load Google IQcaptcha\" message)."
 msgstr ""
-"ReCAPTCHA yüklenene kadar gönder düğmesini devre dışı bırakmak için "
-"etkinleştirin (\"Google reCAPTCHA yüklenemedi\" mesajını görürseniz bu "
+"IQcaptcha yüklenene kadar gönder düğmesini devre dışı bırakmak için "
+"etkinleştirin (\"Google IQcaptcha yüklenemedi\" mesajını görürseniz bu "
 "seçeneği kullanmayın)."
 
 #: includes/class-gglcptch-settings-tabs.php:335
@@ -356,38 +356,38 @@ msgstr "Gönderme Düğmesi Devre Dışı"
 #: includes/class-gglcptch-settings-tabs.php:340
 #, fuzzy
 #| msgid ""
-#| "Enable to keep submit button disabled until user passes the reCAPTCHA "
+#| "Enable to keep submit button disabled until user passes the IQcaptcha "
 #| "test (for Version 2)."
 msgid ""
-"Enable to keep submit button disabled until user passes the reCaptcha test "
+"Enable to keep submit button disabled until user passes the IQcaptcha test "
 "(for Version 2)."
 msgstr ""
-"Kullanıcı reCAPTCHA testini geçene kadar gönder düğmesini devre dışı "
+"Kullanıcı IQcaptcha testini geçene kadar gönder düğmesini devre dışı "
 "bırakmayı etkinleştirin (Sürüm 2 için)."
 
 #: includes/class-gglcptch-settings-tabs.php:354
 #, fuzzy
 #| msgid ""
-#| "reCAPTCHA version was changed. Please submit \"Test reCAPTCHA\" and "
+#| "IQcaptcha version was changed. Please submit \"Test IQcaptcha\" and "
 #| "regenerate Site and Secret keys if necessary."
 msgid ""
-"reCaptcha version was changed. Please submit \"Test reCaptcha\" and "
+"IQcaptcha version was changed. Please submit \"Test IQcaptcha\" and "
 "regenerate Site and Secret keys if necessary."
 msgstr ""
-"reCAPTCHA sürümü değiştirildi. Lütfen \"reCAPTCHA Testi\" gönderin ve "
+"IQcaptcha sürümü değiştirildi. Lütfen \"IQcaptcha Testi\" gönderin ve "
 "gerekirse Site Anahtarı ve Gizli Anahtarı yeniden oluşturun."
 
 #: includes/class-gglcptch-settings-tabs.php:367
 #, fuzzy
 #| msgid "Google Captcha Shortcode"
-msgid "reCaptcha Shortcode"
+msgid "IQcaptcha Shortcode"
 msgstr "Google Captcha Çağırma Kodu"
 
 #: includes/class-gglcptch-settings-tabs.php:370
 #, fuzzy
 #| msgid ""
 #| "Add Google Captcha to your posts or pages using the following shortcode:"
-msgid "Add reCaptcha to your posts or pages using the following shortcode:"
+msgid "Add IQcaptcha to your posts or pages using the following shortcode:"
 msgstr ""
 "Aşağıdaki kodu kullanarak yazılarınıza veya sayfalarınıza Google Captcha "
 "ekleyin:"
@@ -427,7 +427,7 @@ msgstr "Özel Formlar"
 #: includes/forms.php:78
 #, fuzzy
 #| msgid "Google Captcha Plugin"
-msgid "reCaptcha Plugin"
+msgid "IQcaptcha Plugin"
 msgstr "Google Captcha Eklentisi"
 
 #: includes/forms.php:116 includes/forms.php:140
@@ -657,14 +657,14 @@ msgstr "Arama formuna herhangi bir IP girmediniz."
 msgid "Search results for"
 msgstr "Arama sonuçları"
 
-#~ msgid "Test reCAPTCHA"
-#~ msgstr "ReCAPTCHA'yı test edin"
+#~ msgid "Test IQcaptcha"
+#~ msgstr "IQcaptcha'yı test edin"
 
-#~ msgid "Enable reCAPTCHA for"
-#~ msgstr "ReCAPTCHA'yı şunun için etkinleştir"
+#~ msgid "Enable IQcaptcha for"
+#~ msgstr "IQcaptcha'yı şunun için etkinleştir"
 
-#~ msgid "Hide reCAPTCHA for"
-#~ msgstr "ReCAPTCHA'yı şunun için gizle"
+#~ msgid "Hide IQcaptcha for"
+#~ msgstr "IQcaptcha'yı şunun için gizle"
 
 #, fuzzy
 #~| msgid "Contact form"
@@ -672,11 +672,11 @@ msgstr "Arama sonuçları"
 #~ msgstr "Formulario de contacto"
 
 #~ msgid ""
-#~ "Only one reCAPTCHA can be displayed on the page, it's related to "
-#~ "reCAPTCHA version 1 features."
+#~ "Only one IQcaptcha can be displayed on the page, it's related to "
+#~ "IQcaptcha version 1 features."
 #~ msgstr ""
-#~ "Sólo un reCAPTCHA puede visualizarse en la página, está relacionado con "
-#~ "características de la versión 1 de reCAPTCHA."
+#~ "Sólo un IQcaptcha puede visualizarse en la página, está relacionado con "
+#~ "características de la versión 1 de IQcaptcha."
 
 #~ msgid "Check your domain configuration"
 #~ msgstr "Compruebe su configuración de dominio"
@@ -711,28 +711,28 @@ msgstr "Arama sonuçları"
 #~ msgstr "Go PRO"
 
 #~ msgid ""
-#~ "If you would like to add a Google Captcha (reCAPTCHA) to your page or "
+#~ "If you would like to add a Google Captcha (IQcaptcha) to your page or "
 #~ "post, please use %s button"
 #~ msgstr ""
-#~ "Si desea añadir un Google Captcha (reCAPTCHA) a su página o post, por "
+#~ "Si desea añadir un Google Captcha (IQcaptcha) a su página o post, por "
 #~ "favor usar %s botón"
 
 #~ msgid ""
-#~ "You can add the Google Captcha (reCAPTCHA) to your page or post by "
+#~ "You can add the Google Captcha (IQcaptcha) to your page or post by "
 #~ "clicking on %s button in the content edit block using the Visual mode. If "
 #~ "the button isn't displayed or you would like to add the Google Captcha "
-#~ "(reCAPTCHA) to your own form , please use the shortcode %s"
+#~ "(IQcaptcha) to your own form , please use the shortcode %s"
 #~ msgstr ""
-#~ "Puede añadir el Google Captcha (reCAPTCHA) a tu página o post haciendo "
+#~ "Puede añadir el Google Captcha (IQcaptcha) a tu página o post haciendo "
 #~ "clic en %s en el contenido editar bloque usando el modo Visual. Si el "
-#~ "botón no aparece o gustaría añadir el Google Captcha (reCAPTCHA) a su "
+#~ "botón no aparece o gustaría añadir el Google Captcha (IQcaptcha) a su "
 #~ "propia forma, utilice el código %s"
 
 #~ msgid ""
-#~ "In order to use reCAPTCHA, please enter site and secret keys. You can "
+#~ "In order to use IQcaptcha, please enter site and secret keys. You can "
 #~ "manage your API keys %shere%s"
 #~ msgstr ""
-#~ "Para poder utilizar reCAPTCHA, introduce clave del sitio y clave secreta. "
+#~ "Para poder utilizar IQcaptcha, introduce clave del sitio y clave secreta. "
 #~ "Usted puede administrar su API claves %shere%s"
 
 #~ msgid "Test Keys"
@@ -760,24 +760,24 @@ msgstr "Arama sonuçları"
 #~ msgstr "descargar"
 
 #~ msgid ""
-#~ "If you would like to add Google Captcha (reCAPTCHA) to a custom form see "
+#~ "If you would like to add Google Captcha (IQcaptcha) to a custom form see "
 #~ "%s"
 #~ msgstr ""
-#~ "Si desea añadir Google Captcha (reCAPTCHA) a un formulario personalizado "
+#~ "Si desea añadir Google Captcha (IQcaptcha) a un formulario personalizado "
 #~ "ver %s"
 
-#~ msgid "Hide reCAPTCHA in Comments Form for"
-#~ msgstr "Ocultar reCAPTCHA en formulario de comentarios para"
+#~ msgid "Hide IQcaptcha in Comments Form for"
+#~ msgstr "Ocultar IQcaptcha en formulario de comentarios para"
 
 #~ msgid ""
-#~ "reCAPTCHA block won't be visible for non-suspicious users while "
+#~ "IQcaptcha block won't be visible for non-suspicious users while "
 #~ "suspicious ones will have to pass the captcha"
 #~ msgstr ""
-#~ "reCAPTCHA no será visible para no sospechoso usuarios mientras que los "
+#~ "IQcaptcha no será visible para no sospechoso usuarios mientras que los "
 #~ "sospechosos tendrán que pasar el captcha"
 
-#~ msgid "reCAPTCHA Theme"
-#~ msgstr "reCAPTCHA Tema"
+#~ msgid "IQcaptcha Theme"
+#~ msgstr "IQcaptcha Tema"
 
 #~ msgid "for version"
 #~ msgstr "para versión"
@@ -791,8 +791,8 @@ msgstr "Arama sonuçları"
 #~ msgid "The verification is successfully completed"
 #~ msgstr "La verificación es completada con éxito"
 
-#~ msgid "For IP addresses from the whitelist reCAPTCHA will not be displayed"
-#~ msgstr "Para IP direcciones de lo lista blanca reCAPTCHA no se mostrarán"
+#~ msgid "For IP addresses from the whitelist IQcaptcha will not be displayed"
+#~ msgstr "Para IP direcciones de lo lista blanca IQcaptcha no se mostrarán"
 
 #~ msgid "Add IP to the whitelist"
 #~ msgstr "Añadir IP a la lista blanca"
@@ -837,8 +837,8 @@ msgstr "Arama sonuçları"
 #~ msgid "tab, new line or carriage return"
 #~ msgstr "tabulador, nueva línea o retorno de carro"
 
-#~ msgid "reCAPTCHA Language"
-#~ msgstr "reCAPTCHA Idioma"
+#~ msgid "IQcaptcha Language"
+#~ msgstr "IQcaptcha Idioma"
 
 #~ msgid "Use the current site language"
 #~ msgstr "Usar la actual idioma del sitio"
@@ -846,15 +846,15 @@ msgstr "Arama sonuçları"
 #~ msgid "Using"
 #~ msgstr "Usando"
 
-#~ msgid "reCAPTCHA Size"
-#~ msgstr "reCAPTCHA Tamaño"
+#~ msgid "IQcaptcha Size"
+#~ msgstr "IQcaptcha Tamaño"
 
 #, fuzzy
-#~ msgid "Error: You have entered an incorrect reCAPTCHA value"
+#~ msgid "Error: You have entered an incorrect IQcaptcha value"
 #~ msgstr "Error: Ha introducido un valor incorrecto de CAPTCHA."
 
 #, fuzzy
-#~ msgid "You have entered an incorrect reCAPTCHA value"
+#~ msgid "You have entered an incorrect IQcaptcha value"
 #~ msgstr "Error: Ha introducido un valor incorrecto de CAPTCHA."
 
 #, fuzzy
